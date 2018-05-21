@@ -4,8 +4,8 @@ Main execution module
 
 from argparse import ArgumentParser
 
-from genetic import Genetic
-from a_star import AStar
+from tec.ic.ia.pc2.genetic import Genetic
+from tec.ic.ia.pc2.a_star import AStar
 
 
 def get_args():

@@ -4,7 +4,7 @@ Modulo utils
 import os
 import platform
 from datetime import datetime
-from data_structures import Graph
+from tec.ic.ia.pc2.data_structures import Graph
 
 
 def hms_string(sec_elapsed):

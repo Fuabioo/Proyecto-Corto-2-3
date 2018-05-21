@@ -6,9 +6,9 @@ import shutil
 import time
 import random
 
-from data_structures import Graph, PriorityQueue
-from utils import parse_input_a_estrella, load_input, print_console, get_node, hms_string
-from utils import get_direction, write_output_file, format_path, check_root, check_folder
+from tec.ic.ia.pc2.data_structures import Graph, PriorityQueue
+from tec.ic.ia.pc2.utils import parse_input_a_estrella, load_input, print_console, get_node, hms_string
+from tec.ic.ia.pc2.utils import get_direction, write_output_file, format_path, check_root, check_folder
 
 
 def heuristic(node_1, node_2):

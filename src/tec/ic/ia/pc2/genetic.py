@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 
 import matplotlib.pyplot as plt
 
-from utils import hms_string, format_path, check_root, parse_input_a_estrella, load_input
+from tec.ic.ia.pc2.utils import hms_string, format_path, check_root, parse_input_a_estrella, load_input
 
 
 def print_graph(scores):

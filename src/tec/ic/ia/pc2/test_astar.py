@@ -2,19 +2,19 @@
 Testing module
 """
 import pytest
-import main
+import tec.ic.ia.pc2.g08
 
 
 def get_rectangle_input():
     """
     Obtains pre-defined testing base astar that is assured not to fail
     """
-    args = main.get_args()
+    args = g08.get_args()
     args.a_estrella = True
     args.vision = 2
     args.zanahorias = 2
     args.tablero_inicial = "5x4.txt"
-    result = main.get_result(algorithm="AStar", args=args)
+    result = g08.get_result(algorithm="AStar", args=args)
     return result
 
 
@@ -22,12 +22,12 @@ def get_two_carrot_input():
     """
     Obtains pre-defined testing base astar that is assured not to fail
     """
-    args = main.get_args()
+    args = g08.get_args()
     args.a_estrella = True
     args.vision = 2
     args.zanahorias = 2
     args.tablero_inicial = "5x4.txt"
-    result = main.get_result(algorithm="AStar", args=args)
+    result = g08.get_result(algorithm="AStar", args=args)
     return result
 
 
@@ -35,12 +35,12 @@ def get_one_carrot_input():
     """
     Obtains pre-defined testing base astar that is assured not to fail
     """
-    args = main.get_args()
+    args = g08.get_args()
     args.a_estrella = True
     args.vision = 2
     args.zanahorias = 2
     args.tablero_inicial = "4x4(1).txt"
-    result = main.get_result(algorithm="AStar", args=args)
+    result = g08.get_result(algorithm="AStar", args=args)
     return result
 
 
@@ -48,12 +48,12 @@ def get_25_by_25_input():
     """
     Obtains pre-defined testing base astar that is assured not to fail
     """
-    args = main.get_args()
+    args = g08.get_args()
     args.a_estrella = True
     args.vision = 10
     args.zanahorias = 10
     args.tablero_inicial = "25x25(16).txt"
-    result = main.get_result(algorithm="AStar", args=args)
+    result = g08.get_result(algorithm="AStar", args=args)
     return result
 
 
