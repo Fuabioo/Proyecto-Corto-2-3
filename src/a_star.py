@@ -3,10 +3,11 @@ A Star Algorithm related stuff module
 """
 
 import shutil
+import time
 import random
 
 from data_structures import Graph, PriorityQueue
-from utils import parse_input_a_estrella, load_input, print_console, get_node
+from utils import parse_input_a_estrella, load_input, print_console, get_node, hms_string
 from utils import get_direction, write_output_file, format_path, check_root, check_folder
 
 
@@ -56,11 +57,6 @@ class AStar:
 
         result = {}
 
-        # result = {}
-        # result[initial] = dict.fromkeys(accesible_nodes, inf)
-        # for key in accesible_nodes:
-        #     result[key] = dict.fromkeys(accesible_nodes, inf)
-
         end = False
         while frontier:
             current = frontier.pop()
@@ -78,9 +74,6 @@ class AStar:
                         priority = current_cost + heuristic(goal, node)
                         if self.graph.nodes[node].carrot:
                             priority = 1
-                        # result[current][node] = priority
-                        # if initial[0] == 7:
-                        #     print(current, "->", node, ": ", priority)
                         result[get_direction(current, node)] = priority
                         paths[current] = node
                         frontier.push(element=node, priority=priority)
@@ -129,16 +122,13 @@ class AStar:
         costs, next_node = self.get_neighbour_costs()
 
         best_direction = get_direction(current_pos, next_node)
+
         # Move bunny and eat if there is a carrot
         self.enviroment["bunny"] = next_node
         if self.graph.nodes[next_node].consume_carrot():
             self.enviroment["carrot"].remove(next_node)
             self.args.zanahorias -= 1
 
-        # scores = {}
-        # for key in costs:
-        #     direction = get_direction(current_pos, key)
-        #     scores[direction] = costs[key]
         costs["MOVIMIENTO"] = best_direction
         return costs
 
@@ -160,6 +150,8 @@ class AStar:
         """
         Runs the algorithm
         """
+        start = time.time()
+
         # Check that everything is fine with the enviroment
         self.check_enviroment()
 
@@ -168,9 +160,9 @@ class AStar:
         shutil.rmtree(curr_out_dir, ignore_errors=True)
         check_folder(curr_out_dir)
         print("OUTPUT DIRECTORY", curr_out_dir)
-        # print(self.graph)
+
         step_no = 0
-        maximum_steps = 200
+        maximum_steps = self.args.limite
 
         # Initial amount of carrots
         carrot_amount = len(self.enviroment["carrot"])
@@ -182,20 +174,22 @@ class AStar:
             curr_out_dir,
             self.enviroment,
             self.args.debug)
+        step_no += 1
+
+        result_string = ""
 
         while True:
             formated_step = format(step_no, '05d')
+
             if carrot_amount < self.args.zanahorias:
-                print("PASO:", formated_step, "FINAL")
-                print("Menos zanahorias de las necesarias, imposible de terminar")
-                break
+                result_string = "Menos zanahorias de las que conejo ocupa  |  "
             if self.args.zanahorias == 0:
                 print("PASO:", formated_step, "FINAL")
-                print("Conejo satisfecho!")
+                result_string += "Conejo satisfecho!  |  "
                 break
             if step_no == maximum_steps:
                 print("PASO:", formated_step, "FINAL")
-                print("Maxima cantidad de pasos, imposible terminar")
+                result_string += "Imposible terminar: Maxima cantidad de pasos  |  "
                 break
             scores = self.step()
             print_console(formated_step, scores)
@@ -204,5 +198,8 @@ class AStar:
                 curr_out_dir,
                 self.enviroment,
                 self.args.debug)
-
             step_no += 1
+
+        if result_string != "":
+            print(result_string[:-3])
+        print("Duracion:", hms_string(time.time() - start))

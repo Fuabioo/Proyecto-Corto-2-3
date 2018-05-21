@@ -42,6 +42,7 @@ def get_args():
         '--guardar-archivos',
         action='store_true',
         default=True)
+    parser.add_argument('--limite', default='200', type=int)
 
     args = parser.parse_args()
     return args
@@ -59,9 +60,9 @@ def main():
     # testing args astar
     args.a_estrella = True
     args.vision = 10
-    args.zanahorias = 10
-    args.tablero_inicial = "25x25(18).txt"
-    # args.tablero_inicial = "4x4(2).txt"
+    args.zanahorias = 2
+    # args.tablero_inicial = "25x25(18).txt"
+    args.tablero_inicial = "4x4(2).txt"
 
     # testing args genetis
     # args.genetico = True
