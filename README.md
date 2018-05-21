@@ -1,4 +1,32 @@
-# Proyecto-Corto-2-3
+# Inteligencia Artificial
+
+Instituto Tecnológico de Costa Rica  
+Ingeniería en Computación  
+IC6200 - Inteligencia Artificial  
+I Semestre, 2018
+
+# Grupo #8
+
+Fabio Mora Cubillo - 2013012801  
+Sergio Moya Valerin - 2013015682  
+Gabriel Venegas Castro - 2013115967
+
+# Contenidos
+
+Proyecto Corto 2 y 3 - Simulador Votos (pc2) 
+ > + Algoritmo A*  
+ > +---- Descripción  
+ > +---- Calculo de heuristico  
+ > +---- Ejemplo  
+ > +---- Analisis  
+ > + Algoritmo A*  
+ > +---- Descripción  
+ > +---- Ejemplo  
+ > +---- Analisis  
+ > + Apéndice  
+ > +---- Instalación  
+ > +---- Uso  
+ > +---- Archivos de entrada  
 
 # Algoritmo A*
 
@@ -161,4 +189,26 @@ Conejo satisfecho!
 Duracion: 0 h:00 m:00.02 s
 ```
 
+## Analisis
 
+En base al ejemplo anterior, podemos hacer varias pruebas sobre el algoritmo:
+
+
+
+# Algoritmo Genetico
+
+
+## Ejemplo
+
+## Analisis
+
+# Conclusiones
+
+
+# Apéndice
+
+## Instalación
+
+## Uso
+
+## Archivos de entrada
