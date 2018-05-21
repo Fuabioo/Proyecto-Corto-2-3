@@ -34,6 +34,9 @@ class AStar:
         self.folders = ["Output"]
         check_root(self.app_root, self.folders)
 
+        self.counter = 0
+        self.last = ""
+
     def set_enviroment(self, enviroment):
         """
         Sets the enviroment variable
@@ -72,8 +75,20 @@ class AStar:
                         accumulated_cost[node] = current_cost
                         # f(n) = g(n) + h(n)
                         priority = current_cost + heuristic(goal, node)
-                        if self.graph.nodes[node].carrot:
-                            priority = 1
+                        # if self.graph.nodes[node].carrot:
+                        #    priority = 1
+                        if self.args.debug:
+                            print(
+                                current,
+                                "->",
+                                node,
+                                ' >>> ',
+                                priority,
+                                ' = ',
+                                current_cost,
+                                ' + ',
+                                priority -
+                                current_cost)
                         result[get_direction(current, node)] = priority
                         paths[current] = node
                         frontier.push(element=node, priority=priority)
@@ -122,6 +137,14 @@ class AStar:
         costs, next_node = self.get_neighbour_costs()
 
         best_direction = get_direction(current_pos, next_node)
+
+        if best_direction == self.last:
+            self.counter += 1
+        if self.counter > 15:
+            access = self.graph.neighbors(current_pos)
+            access.pop(next_node)
+            next_node = access[random.randint(0, len(access)-1)]
+            best_direction = get_direction(current_pos, next_node)
 
         # Move bunny and eat if there is a carrot
         self.enviroment["bunny"] = next_node
@@ -202,4 +225,6 @@ class AStar:
 
         if result_string != "":
             print(result_string[:-3])
-        print("Duracion:", hms_string(time.time() - start))
+        duration = time.time() - start
+        print("Duracion:", hms_string(duration))
+        return step_no, duration, result_string
