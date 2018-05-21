@@ -57,23 +57,24 @@ def main():
     """ Main execution """
     args = get_args()
     # testing args astar
-    # args.a_estrella = True
-    # args.vision = 4
-    # args.zanahorias = 2
+    args.a_estrella = True
+    args.vision = 10
+    args.zanahorias = 10
+    args.tablero_inicial = "25x25(18).txt"
     # args.tablero_inicial = "4x4(2).txt"
 
     # testing args genetis
-    args.genetico = True
-    args.derecha = True
-    args.individuos = 20
-    args.generaciones = 10
-    args.vision = 4
-    args.zanahorias = 2
-    args.tablero_inicial = "4x4(2).txt"
+    # args.genetico = True
+    # args.derecha = True
+    # args.individuos = 20
+    # args.generaciones = 10
+    # args.vision = 4
+    # args.zanahorias = 2
+    # args.tablero_inicial = "4x4(2).txt"
     # args.show_graphic = True
 
-    # result = get_result(algorithm="AStar", args=args)
-    result = get_result(algorithm="Genetic", args=args)
+    result = get_result(algorithm="AStar", args=args)
+    # result = get_result(algorithm="Genetic", args=args)
     # print(result)
     result.run()
     return result

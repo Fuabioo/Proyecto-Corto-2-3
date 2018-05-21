@@ -2,11 +2,11 @@
 A Star Algorithm related stuff module
 """
 
-from math import inf
 import shutil
+import random
 
 from data_structures import Graph, PriorityQueue
-from utils import parse_input_a_estrella, load_input, print_console
+from utils import parse_input_a_estrella, load_input, print_console, get_node
 from utils import get_direction, write_output_file, format_path, check_root, check_folder
 
 
@@ -55,9 +55,11 @@ class AStar:
         paths = {}
 
         result = {}
-        result[initial] = dict.fromkeys(accesible_nodes, inf)
-        for key in accesible_nodes:
-            result[key] = dict.fromkeys(accesible_nodes, inf)
+
+        # result = {}
+        # result[initial] = dict.fromkeys(accesible_nodes, inf)
+        # for key in accesible_nodes:
+        #     result[key] = dict.fromkeys(accesible_nodes, inf)
 
         end = False
         while frontier:
@@ -67,7 +69,7 @@ class AStar:
                 break
 
             for node in self.graph.neighbors(current):
-                if node in accesible_nodes:
+                if node in accesible_nodes:  # Node in vision field?
                     # cost from current to neighbor = 1
                     current_cost = accumulated_cost[current] + 1
                     if node not in accumulated_cost or current_cost < accumulated_cost[node]:
@@ -75,11 +77,27 @@ class AStar:
                         # f(n) = g(n) + h(n)
                         priority = current_cost + heuristic(goal, node)
                         if self.graph.nodes[node].carrot:
-                            priority = 0
-                        result[current][node] = priority
+                            priority = 1
+                        # result[current][node] = priority
+                        # if initial[0] == 7:
+                        #     print(current, "->", node, ": ", priority)
+                        result[get_direction(current, node)] = priority
                         paths[current] = node
                         frontier.push(element=node, priority=priority)
         return result, paths
+
+    def get_cost_direction(self, node, accesible_nodes):
+        """
+        Executes a search for a given goal and gets the result direction
+        """
+        costs, path = self.a_star_search(node, accesible_nodes)
+        next_node = path[self.enviroment["bunny"]]
+        next_dir = get_direction(self.enviroment["bunny"], next_node)
+        if costs[next_dir] == 0:
+            costs[next_dir] = 1
+        next_node = min(costs, key=costs.get)
+        next_node = get_node(self.enviroment["bunny"], next_node)
+        return costs, next_node
 
     def get_neighbour_costs(self):
         """
@@ -88,47 +106,41 @@ class AStar:
         accesible_nodes = self.graph.get_scope_keys(
             self.enviroment["bunny"], self.args.vision)
         all_costs = {}
-        all_min_costs = []
-        for valid_node in self.graph.neighbors(
-                self.enviroment["bunny"]):  # accesible_nodes:
-            costs, path = self.a_star_search(valid_node, accesible_nodes)
-            for node in path:
-                min_cost = min(path, key=path.get)
-                if path[min_cost] not in all_min_costs:
-                    all_min_costs.append(path[min_cost])
-            for node in self.graph.neighbors(self.enviroment["bunny"]):
-                if node not in all_costs:
-                    all_costs[node] = []
-                all_costs[node].append(costs[self.enviroment["bunny"]][node])
-        for node in all_costs:
-            if node in all_min_costs:
-                all_costs[node] = min(all_costs[node])
-            else:
-                all_costs[node] = sum(all_costs[node])
-        return all_costs
+        next_node = None
+        for valid_node in accesible_nodes:
+            if self.graph.nodes[valid_node].carrot:
+                all_costs, next_node = self.get_cost_direction(
+                    valid_node, accesible_nodes)
+                break
+        if all_costs == {}:
+            posibilities = self.graph.neighbors(self.enviroment["bunny"])
+            index = random.randint(0, len(posibilities) - 1)
+            key = list(posibilities)[index]
+            all_costs, next_node = self.get_cost_direction(
+                key, accesible_nodes)
+
+        return all_costs, next_node
 
     def step(self):
         """
         Step execution
         """
-        # pprint(self.enviroment)
         current_pos = self.enviroment["bunny"]
-        costs = self.get_neighbour_costs()
+        costs, next_node = self.get_neighbour_costs()
 
-        best_cost = min(costs, key=costs.get)
-        best_direction = get_direction(current_pos, best_cost)
+        best_direction = get_direction(current_pos, next_node)
         # Move bunny and eat if there is a carrot
-        self.enviroment["bunny"] = best_cost
-        if self.graph.nodes[best_cost].consume_carrot():
-            self.enviroment["carrot"].remove(best_cost)
+        self.enviroment["bunny"] = next_node
+        if self.graph.nodes[next_node].consume_carrot():
+            self.enviroment["carrot"].remove(next_node)
             self.args.zanahorias -= 1
 
-        scores = {}
-        for key in costs:
-            direction = get_direction(current_pos, key)
-            scores[direction] = costs[key]
-        scores["MOVIMIENTO"] = best_direction
-        return scores
+        # scores = {}
+        # for key in costs:
+        #     direction = get_direction(current_pos, key)
+        #     scores[direction] = costs[key]
+        costs["MOVIMIENTO"] = best_direction
+        return costs
 
     def check_enviroment(self):
         """ Checks that the enviroment is full of necesary variables"""
@@ -158,7 +170,7 @@ class AStar:
         print("OUTPUT DIRECTORY", curr_out_dir)
         # print(self.graph)
         step_no = 0
-        maximum_steps = 20
+        maximum_steps = 200
 
         # Initial amount of carrots
         carrot_amount = len(self.enviroment["carrot"])

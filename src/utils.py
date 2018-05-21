@@ -232,3 +232,23 @@ def get_direction(src, dest):
     if y_diference == 1:
         direction = "ABAJO"
     return direction
+
+
+def get_node(src, direction):
+    """
+    Obtains the direction of a movement
+    """
+    dest = (-1, -1)
+    down = (src[0] + 1, src[1])
+    up = (src[0] - 1, src[1])
+    right = (src[0], src[1] + 1)
+    left = (src[0], src[1] - 1)
+    if get_direction(src, down) == direction:
+        dest = down
+    if get_direction(src, up) == direction:
+        dest = up
+    if get_direction(src, right) == direction:
+        dest = right
+    if get_direction(src, left) == direction:
+        dest = left
+    return dest
