@@ -17,8 +17,8 @@ def heuristic(node_1, node_2):
 
 ## Ejemplo
 
-Vision del conejo: 10\
-Zanahorias a comer: 2\
+Vision del conejo: 10  
+Zanahorias a comer: 2  
 Tablero inicial: 4x4 (con total de 2 zanahorias)
 
 ### Paso 00001
@@ -38,14 +38,14 @@ Podemos notar que en la posicion derecha al conejo hay una zanahoria, esto impli
 | Abajo | `(1, 1)` | `3` |
 | Arriba | `N/A` | `N/A` |
 
-**Decision**: Moverse hacia la derecha\
-**Calculos realizados**(directamente impresos por el algoritmo):\
+**Decision**: Moverse hacia la derecha  
+**Calculos realizados**(directamente impresos por el algoritmo):  
 ```bash
 (0, 1) -> (0, 0)  >>>  3  =  1  +  2
 (0, 1) -> (1, 1)  >>>  3  =  1  +  2
 (0, 1) -> (0, 2)  >>>  1  =  1  +  0
 ```
-**Se imprime en consola**:\
+**Se imprime en consola**:  
 ```bash
 PASO: 00001 IZQUIERDA: 3 DERECHA: 1 ARRIBA: N/A ABAJO: 3 MOVIMIENTO: DERECHA
 ```
@@ -67,8 +67,8 @@ En el paso anterior el conejo devoro una zanahoria, por lo que debe buscar ptra.
 | Abajo | `(1, 2)` | `5` |
 | Arriba | `N/A` | `N/A` |
 
-**Desicion**: Moverse hacia la derecha\
-**Calculos realizados**(directamente impresos por el algoritmo):\
+**Desicion**: Moverse hacia la derecha  
+**Calculos realizados**(directamente impresos por el algoritmo):  
 ```bash
 (0, 2) -> (0, 1)  >>>  5  =  1  +  4
 (0, 2) -> (1, 2)  >>>  3  =  1  +  2
@@ -80,7 +80,7 @@ En el paso anterior el conejo devoro una zanahoria, por lo que debe buscar ptra.
 (2, 2) -> (2, 1)  >>>  5  =  3  +  2
 (2, 2) -> (3, 2)  >>>  5  =  3  +  2
 ```
-**Se imprime en consola**:\
+**Se imprime en consola**:  
 ```bash
 PASO: 00002 IZQUIERDA: 5 DERECHA: 3 ARRIBA: N/A ABAJO: 5 MOVIMIENTO: DERECHA 
 ```
@@ -102,15 +102,15 @@ Como el conejo no ha comido ninguna zanahoria, se continua con la busqueda.
 | Abajo | `(1, 3)` | `2` |
 | Arriba | `N/A` | `N/A` |
 
-**Desicion**: Moverse hacia la derecha\
-**Calculos realizados**(directamente impresos por el algoritmo):\
+**Desicion**: Moverse hacia la derecha  
+**Calculos realizados**(directamente impresos por el algoritmo):  
 ```bash
 (0, 3) -> (0, 2)  >>>  4  =  1  +  3
 (0, 3) -> (1, 3)  >>>  2  =  1  +  1
 (1, 3) -> (1, 2)  >>>  4  =  2  +  2
 (1, 3) -> (2, 3)  >>>  2  =  2  +  0
 ```
-**Se imprime en consola**:\
+**Se imprime en consola**:  
 ```bash
 PASO: 00003 IZQUIERDA: 4 DERECHA: N/A ARRIBA: N/A ABAJO: 2 MOVIMIENTO: ABAJO 
 ```
@@ -132,14 +132,14 @@ Como el conejo no ha comido ninguna zanahoria, se continua con la busqueda. Al e
 | Abajo | `(2, 3)` | `1` |
 | Arriba | `(0, 3)` | `3` |
 
-**Desicion**: Moverse hacia la derecha\
-**Calculos realizados**(directamente impresos por el algoritmo):\
+**Desicion**: Moverse hacia la derecha  
+**Calculos realizados**(directamente impresos por el algoritmo):  
 ```bash
 (1, 3) -> (0, 3)  >>>  3  =  1  +  2
 (1, 3) -> (1, 2)  >>>  3  =  1  +  2
 (1, 3) -> (2, 3)  >>>  1  =  1  +  0
 ```
-**Se imprime en consola**:\
+**Se imprime en consola**:  
 ```bash
 PASO: 00004 IZQUIERDA: 3 DERECHA: N/A ARRIBA: 3 ABAJO: 1 MOVIMIENTO: ABAJO 
 ```
@@ -154,7 +154,7 @@ PASO: 00004 IZQUIERDA: 3 DERECHA: N/A ARRIBA: 3 ABAJO: 1 MOVIMIENTO: ABAJO
 ```
 En el paso anterior el conejo devoro una zanahoria, pero como ya consumio todas las que debia consumir, el algoritmo termina.
 
-**Se imprime en consola**:\
+**Se imprime en consola**:  
 ```bash
 PASO: 00005 FINAL
 Conejo satisfecho!  
