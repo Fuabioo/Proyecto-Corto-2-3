@@ -3,3 +3,6 @@ Output/
 _generated_inputs_/
 __pycache__
 data_gathering_astar.py
+dist/
+tec.egg-info/
+build/lib/tec/
