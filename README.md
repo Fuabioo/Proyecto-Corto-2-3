@@ -20,13 +20,14 @@ Por ejemplo, para el siguiente espacio de 4x4 con 2 zanahorias
    Z
     
 ```
-Denominando las posiciones adyacentes al conejo basandonos en su posicion:
+Podemos notar que en la posicion derecha al conejo hay una zanahoria, esto implica que el conejo va a querer ir ahi, por lo que ese seria su nodo destino.
 
-| Nodo | Posicion |
-|:--:|:--|
-| Conejo | (0, 1) |
-| Izquierda | (0, 0) |
-| Derecha | (0, 2) |
-| Abajo | (1, 1) |
-| Arriba | N/A |
+| Nodo | Posicion | g(n) | h(n) | f(n) = g(n) + h(n) |
+|:--:|:--:|:--:|:--:|:--:|
+| Conejo | `(0, 1)` | `0` | `1` | `1` |
+| Izquierda | `(0, 0)` | `1` | `2` | `3` |
+| Derecha | `(0, 2)` | `1` | `0` | `1` |
+| Abajo | `(1, 1)` | `1` | `2` | `0` |
+| Arriba | `N/A` | `N/A` | `N/A` | `N/A` |
+
 
