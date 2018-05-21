@@ -18,7 +18,7 @@ def get_args():
     parser.add_argument(
         '--tablero-inicial',
         type=str,
-        required=False,  # True,
+        required=False,
         help="Archivo de entrada")
 
     parser.add_argument('--a-estrella', action='store_true')
@@ -49,7 +49,7 @@ def get_args():
 
 
 def get_result(algorithm="AStar", args=None):
-    """ Factory method: gets the algorithm class """
+    """ Factors the algorithm class """
     algorithms = dict(AStar=AStar, Genetic=Genetic)
     return algorithms[algorithm](args=args)
 
@@ -75,10 +75,11 @@ def main():
     # args.zanahorias = 2
     # args.tablero_inicial = "4x4(2).txt"
     # args.show_graphic = True
-
-    result = get_result(algorithm="AStar", args=args)
-    # result = get_result(algorithm="Genetic", args=args)
-    # print(result)
+    result = None
+    if args.a_estrella:
+        result = get_result(algorithm="AStar", args=args)
+    if args.genetico:
+        result = get_result(algorithm="Genetic", args=args)
     result.run()
     return result
 
