@@ -197,6 +197,22 @@ En base al ejemplo anterior, podemos hacer varias pruebas sobre el algoritmo:
 
 # Algoritmo Genetico
 
+Un algoritmo genetico, es una especializacion de el algoritmo beam search, que se usa para resolver algunos problemas de busqueda. Este algoritmo esta inspirado en la evolucion biologica y su base genetico-molecular.
+
+El funcionamiento de este es relativamente facil de entender, se crea o toma una poblacion base, la cual esta compuesta de individuos y a su vez cada individuo esta compuesto de un conjunto de genes (que en el fondo es un array con determinados valores), luego se seleccionan padres con base a algun criterio y se reproducen, para esto se usan genes del sujeto "padre" y los restantes de la "madre", usando algun tipo de politica particular que puede variar de la implementacion del mismo posterior mente pueden haber hijos que tengan mutaciones y ellos tambien ingresan a la poblacion.
+
+Luego de esto basado en el Darwinismo social se crea una funcion que calcule la aptitud de este sujeto y posteriormente se eliminan de esta generacion a los individuos menos aptos, enviando a los mejores a la siguiente generacion y repitiendo esto repetidamente hasta encontrar un resultado que cumpla los requisitos, o bien hasta que se cumpla alguna otra condicion, sea tiempo o poder computacional.
+
+
+## Implementacion Proyecto Corto 3
+
+LLevando la definiion anterior al contexto del proyecto corto numero 3 se nos presenta una "matriz" la cual es un tablero que tiene representaciones de un conejo (C) y varias zanahorias (Z), una direccion inicial (hacia donde el conejo se movera cuando inicie) y el algoritmo se encargara de agregar una serie de direccionadores izquierda (<), derecha (>), arriba (^), abajo (v); que causaran que el conejo cambie su direccion al caminar sobre ellas, con el objetivo de que se coma cada una , bien la mayoria de las zanahorias.
+
+## Problemas potenciales detectados
+
+A continuacion se listaran una serie de problemas de implementacion encontrados y la solucion que se les dio a estos.
+
+
 
 ## Ejemplo
 
