@@ -259,7 +259,7 @@ Se corre un ejemplo con los siguientes parametros
 ### Parametros:
 - direccion inical = derecha
 - individuos = 20
-- generaciones = 100
+- generaciones = 1000
 - probabilidad de mutacion = 0.2
 - politica de cruce = "Columnas"
 
@@ -309,6 +309,241 @@ Duracion: 0 h:00 m:08.68 s
 ```
 ### Analisis
 Como se puede apreciar el algoritmo encuentra una solucion completa y luego de la generacion numero 100 mejora el Fitness eliminando un direccionador en comparacion a la solucion encontrada, la posibilidad de encontrar una mejora en una solucion es relativamente baja luego de alcanzar la completitud.
+
+
+## Ejemplo 2
+
+### Parametros:
+- direccion inical = derecha
+- individuos = 20
+- generaciones = 1000
+- probabilidad de mutacion = 0.2
+- politica de cruce = "Columnas"
+
+
+### Parametros de evolucion:
+- Premio de completitud = 10000
+- Premio por zanahoria = 50
+- Pena por movimiento = 1
+- Pena por direccionador = 5
+
+
+### Tablero:
+```
+       
+CZ ZZ  
+   ZZ Z
+ Z  Z  
+Z     Z
+Z  Z  Z
+   Z   
+
+```
+### Resultado
+
+![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_2.png)
+
+### Mejor individuo generacion 0
+``` python
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', ' '],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
+ ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
+ [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
+ ```
+ ### Mejor individuo generacion 1
+``` python
+[['>', ' ', ' ', 'v', '^', ' ', ' '],
+ ['>C', 'Z', '>', 'Z', 'vZ', ' ', ' '],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', 'v', '<', '<Z', 'v', ' '],
+ ['Z', ' ', '<', ' ', ' ', ' ', 'Z'],
+ ['Z', 'v', ' ', 'Z', ' ', '>', 'Z'],
+ [' ', '^', ' ', 'vZ', ' ', ' ', ' ']]
+ 
+```
+ ### Mejor individuo generacion 114
+
+``` python
+[['>', ' ', ' ', 'v', '^', ' ', ' '],
+ ['vC', 'Z', '>', 'Z', 'vZ', ' ', ' '],
+ [' ', 'v', ' ', '>Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', '^', '<', 'Z', 'v', ' '],
+ ['Z', '^', '<', ' ', ' ', 'v', '^Z'],
+ ['Z', ' ', ' ', 'Z', '<', '>', '^Z'],
+ [' ', '^', ' ', 'vZ', ' ', ' ', '>']]
+```
+
+ ### Mejor individuo generacion 135
+
+``` python
+[['v', '>', ' ', 'v', '^', ' ', '>'],
+ ['vC', 'Z', ' ', 'Z', 'vZ', ' ', ' '],
+ ['<', 'v', '^', '>Z', 'Z', ' ', '<Z'],
+ [' ', 'Z', '^', '<', 'Z', 'v', ' '],
+ ['<Z', '^', '<', ' ', ' ', 'v', '^Z'],
+ ['Z', ' ', '<', 'Z', '>', '>', '^Z'],
+ ['^', '>', ' ', 'vZ', '<', '^', ' ']]
+```
+
+### Mejor individuo generacion 999
+``` python
+[['v', ' ', ' ', 'v', '^', '>', ' '],
+ ['^C', 'Z', ' ', '>Z', 'vZ', ' ', ' '],
+ ['<', ' ', '>', '>Z', 'Z', ' ', '<Z'],
+ ['^', 'Z', '^', '<', 'Z', 'v', ' '],
+ ['<Z', '<', ' ', '<', ' ', '>', '^Z'],
+ ['Z', ' ', '<', 'Z', '>', ' ', '^Z'],
+ [' ', '^', ' ', 'vZ', '^', 'v', ' ']]
+```
+
+### Analisis
+Pese a que dados estos parametros y entradas no se llega a dar una completitud en la busqueda, el algoritmo muestra claramente como con el pasar de las generaciones la calidad de los individuos va mejorando, por lo que se puede concluir que el algoritmo funciona satisfactoriamente ya que busca buenas soluciones con relativo poco poder computacional.
+
+
+## Ejemplo 3
+Se corre un ejemplo con los siguientes parametros
+
+### Parametros:
+- direccion inical = derecha
+- individuos = 20
+- generaciones = 1000
+- probabilidad de mutacion = 0.2
+- politica de cruce = "Genes"
+
+
+### Parametros de evolucion:
+- Premio de completitud = 10000
+- Premio por zanahoria = 50
+- Pena por movimiento = 1
+- Pena por direccionador = 5
+
+
+### Tablero:
+```
+ CZ 
+    
+   Z
+```
+
+### Resultado
+
+![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_3.png)
+
+Duracion: 0 h:00 m:08.68 s
+
+### Mejor individuo generacion 0
+``` python
+[[' ', 'C', 'Z', ' '],
+ [' ', ' ', ' ', ' '],
+ [' ', ' ', ' ', 'Z'],
+ [' ', ' ', ' ', ' ']]
+```
+### Mejor individuo generacion 1 a 999
+``` python
+[[' ', 'C', 'Z', 'v'],
+ [' ', ' ', ' ', ' '],
+ [' ', ' ', ' ', 'Z'],
+ [' ', ' ', ' ', ' ']]
+```
+
+### Analisis
+Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocacion particular se dio un caso donde la solucion perfecta se encontro en el primer caso, pero en particular converge a una solucion mejor mas rapido que la politica por columnas, cabe resaltar que el poder computacional requerido para esta politica es considerablemente mas alto.
+
+
+## Ejemplo 2
+
+### Parametros:
+- direccion inical = derecha
+- individuos = 20
+- generaciones = 1000
+- probabilidad de mutacion = 0.2
+- politica de cruce = "Columnas"
+
+
+### Parametros de evolucion:
+- Premio de completitud = 10000
+- Premio por zanahoria = 50
+- Pena por movimiento = 1
+- Pena por direccionador = 5
+
+
+### Tablero:
+```
+       
+CZ ZZ  
+   ZZ Z
+ Z  Z  
+Z     Z
+Z  Z  Z
+   Z   
+
+```
+### Resultado
+
+![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_2.png)
+
+### Mejor individuo generacion 0
+``` python
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', ' '],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
+ ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
+ [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
+ ```
+ ### Mejor individuo generacion 1
+``` python
+[['>', ' ', ' ', 'v', '^', ' ', ' '],
+ ['>C', 'Z', '>', 'Z', 'vZ', ' ', ' '],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', 'v', '<', '<Z', 'v', ' '],
+ ['Z', ' ', '<', ' ', ' ', ' ', 'Z'],
+ ['Z', 'v', ' ', 'Z', ' ', '>', 'Z'],
+ [' ', '^', ' ', 'vZ', ' ', ' ', ' ']]
+ 
+```
+ ### Mejor individuo generacion 114
+
+``` python
+[['>', ' ', ' ', 'v', '^', ' ', ' '],
+ ['vC', 'Z', '>', 'Z', 'vZ', ' ', ' '],
+ [' ', 'v', ' ', '>Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', '^', '<', 'Z', 'v', ' '],
+ ['Z', '^', '<', ' ', ' ', 'v', '^Z'],
+ ['Z', ' ', ' ', 'Z', '<', '>', '^Z'],
+ [' ', '^', ' ', 'vZ', ' ', ' ', '>']]
+```
+
+ ### Mejor individuo generacion 135
+
+``` python
+[['v', '>', ' ', 'v', '^', ' ', '>'],
+ ['vC', 'Z', ' ', 'Z', 'vZ', ' ', ' '],
+ ['<', 'v', '^', '>Z', 'Z', ' ', '<Z'],
+ [' ', 'Z', '^', '<', 'Z', 'v', ' '],
+ ['<Z', '^', '<', ' ', ' ', 'v', '^Z'],
+ ['Z', ' ', '<', 'Z', '>', '>', '^Z'],
+ ['^', '>', ' ', 'vZ', '<', '^', ' ']]
+```
+
+### Mejor individuo generacion 999
+``` python
+[['v', ' ', ' ', 'v', '^', '>', ' '],
+ ['^C', 'Z', ' ', '>Z', 'vZ', ' ', ' '],
+ ['<', ' ', '>', '>Z', 'Z', ' ', '<Z'],
+ ['^', 'Z', '^', '<', 'Z', 'v', ' '],
+ ['<Z', '<', ' ', '<', ' ', '>', '^Z'],
+ ['Z', ' ', '<', 'Z', '>', ' ', '^Z'],
+ [' ', '^', ' ', 'vZ', '^', 'v', ' ']]
+```
+
+### Analisis
+Pese a que dados estos parametros y entradas no se llega a dar una completitud en la busqueda, el algoritmo muestra claramente como con el pasar de las generaciones la calidad de los individuos va mejorando, por lo que se puede concluir que el algoritmo funciona satisfactoriamente ya que busca buenas soluciones con relativo poco poder computacional.
+
 
 # Conclusiones
 
