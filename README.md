@@ -13,14 +13,15 @@ Gabriel Venegas Castro - 2013115967
 
 # Contenidos
 
-Proyecto Corto 2 y 3 - Simulador Votos (pc2) 
+Proyecto Corto 2 y 3 - Conejo y Zanahorias
  > + Algoritmo A*  
  > +---- Descripción  
  > +---- Calculo de heuristico  
  > +---- Ejemplo  
  > +---- Analisis  
- > + Algoritmo A*  
- > +---- Descripción  
+ > + Algoritmo Genetico 
+ > +---- Descripción
+ > +---- Problemas potenciales detectados
  > +---- Ejemplo  
  > +---- Analisis  
  > + Apéndice  
@@ -253,6 +254,32 @@ Este problema esta mas sujeto a implementacion, interpretabilidad o bien ambigue
 Para el proyecto se toma la primera interpretacion meramente como una desicion de implementacion, por lo tanto si hay un direccionador en la casilla de salida el conejo tomara su direccion original hasta encontrarse con un direccionador que cambie su direccion en una casilla que sea distinta de su casilla de salida
 
 ## Ejemplo
+Se corre un ejemplo con los siguientes parametros
+
+Parametros:
+-direccion inical = derecha
+-individuos = 20
+-generaciones = 100
+-probabilidad de mutacion = 0.2
+-politica de cruce = "Columnas"
+
+
+Parametros de evolucion:
+-Premio de completitud = 10000
+-Premio por zanahoria = 50
+-Pena por movimiento = 1
+-Pena por direccionador = 5
+
+
+Tablero:
+```
+ CZ 
+    
+   Z
+```
+   
+
+
 
 ## Analisis
 
