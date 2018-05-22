@@ -237,23 +237,22 @@ class Genetic:
         return kids
 
     def mute(self, to_mute):
-        """
-        Mutates individuals
-        """
-        gens = ["<", ">", "^", "v"]
+        gens = ["<", ">", "^", "v", ""]
+        directions = []
         for person in to_mute:
-            x_value, y_value = random.randint(
-                0, len(person) - 1), random.randint(0, len(person[0]) - 1)
+            x, y = random.randint( 0, len(person) - 1), random.randint(0, len(person[0]) - 1)
             mutation = random.choice(gens)
-            if person[x_value][y_value] == "C" or person[x_value][y_value] == "Z":
-                person[x_value][y_value] = mutation + person[x_value][y_value]
-            elif len(person[x_value][y_value]) > 1:
-                if person[x_value][y_value][1] == "Z":
-                    person[x_value][y_value] = mutation + "Z"
-                elif person[x_value][y_value][1] == "C":
-                    person[x_value][y_value] = mutation + "C"
+            if person[x][y] == "C" or person[x][y] == "Z":
+                person[x][y] = mutation + person[x][y]
+            elif len(person[x][y]) > 1:
+                if person[x][y][1] == "Z":
+                    person[x][y] = mutation + "Z"
+                elif person[x][y][1] == "C":
+                    person[x][y] = mutation + "C"
             else:
-                person[x_value][y_value] = mutation
+                if mutation == "":
+                    mutation = " "
+                person[x][y] = mutation
         return to_mute
 
     def new_child(self, mother, father):
