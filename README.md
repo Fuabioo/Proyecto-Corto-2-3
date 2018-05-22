@@ -257,18 +257,18 @@ Para el proyecto se toma la primera interpretacion meramente como una desicion d
 Se corre un ejemplo con los siguientes parametros
 
 Parametros:
--direccion inical = derecha
--individuos = 20
--generaciones = 100
--probabilidad de mutacion = 0.2
--politica de cruce = "Columnas"
+- direccion inical = derecha
+- individuos = 20
+- generaciones = 100
+- probabilidad de mutacion = 0.2
+- politica de cruce = "Columnas"
 
 
 Parametros de evolucion:
--Premio de completitud = 10000
--Premio por zanahoria = 50
--Pena por movimiento = 1
--Pena por direccionador = 5
+- Premio de completitud = 10000
+- Premio por zanahoria = 50
+- Pena por movimiento = 1
+- Pena por direccionador = 5
 
 
 Tablero:
@@ -277,7 +277,10 @@ Tablero:
     
    Z
 ```
-   
+
+Resultado:
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
 
 
 
