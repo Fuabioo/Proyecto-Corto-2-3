@@ -256,7 +256,7 @@ Para el proyecto se toma la primera interpretacion meramente como una desicion d
 ## Ejemplo
 Se corre un ejemplo con los siguientes parametros
 
-Parametros:
+### Parametros:
 - direccion inical = derecha
 - individuos = 20
 - generaciones = 100
@@ -264,25 +264,27 @@ Parametros:
 - politica de cruce = "Columnas"
 
 
-Parametros de evolucion:
+### Parametros de evolucion:
 - Premio de completitud = 10000
 - Premio por zanahoria = 50
 - Pena por movimiento = 1
 - Pena por direccionador = 5
 
 
-Tablero:
+### Tablero:
 ```
  CZ 
     
    Z
 ```
 
-Resultado:
+### Resultado
 
 ![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_1.png)
-Duracion: 0 h:00 m:01.80 s
 
+Duracion: 0 h:00 m:08.68 s
+
+### Mejor individuo generacion 1
 
 
 
