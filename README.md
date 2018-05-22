@@ -206,13 +206,51 @@ Luego de esto basado en el Darwinismo social se crea una funcion que calcule la 
 
 ## Implementacion Proyecto Corto 3
 
-LLevando la definiion anterior al contexto del proyecto corto numero 3 se nos presenta una "matriz" la cual es un tablero que tiene representaciones de un conejo (C) y varias zanahorias (Z), una direccion inicial (hacia donde el conejo se movera cuando inicie) y el algoritmo se encargara de agregar una serie de direccionadores izquierda (<), derecha (>), arriba (^), abajo (v); que causaran que el conejo cambie su direccion al caminar sobre ellas, con el objetivo de que se coma cada una , bien la mayoria de las zanahorias.
+LLevando la definiion anterior al contexto del proyecto corto numero 3 se nos presenta una "matriz" la cual es un tablero que tiene representaciones de un conejo (C) y varias zanahorias (Z), una direccion inicial (hacia donde el conejo se movera cuando inicie) y el algoritmo se encargara de agregar una serie de direccionadores izquierda (<), derecha (>), arriba (^), abajo (v), ademas de una direccion inicial implicita; que causaran que el conejo cambie su direccion al caminar sobre ellas, con el objetivo de que se coma cada una , bien la mayoria de las zanahorias.
 
 ## Problemas potenciales detectados
 
 A continuacion se listaran una serie de problemas de implementacion encontrados y la solucion que se les dio a estos.
 
+### Problema 1: Enciclamientos
 
+Existe posibilidad de que el conejo despues de colocar una serie de direccionadores empieze a "correr en circulos", las 2 posibilidades son:
+
+Enciclamiento Cuadrado/Rectangular
+
+```
+[['v','C',' ','<'],
+ [' ','Z',' ',' '],
+ ['>',' ',' ','^'],
+ [' ',' ','Z',' '],]
+```
+
+Encilamiento en linea recta
+
+```
+[['>','C',' ','<'],
+ [' ','Z',' ',' '],
+ [' ',' ',' ',' '],
+ [' ',' ','Z',' '],]
+```
+
+Este tipo de casos causan que la funcion de aptitud (fitness) se encicle, ya que esta tiene que evaluar la ruta del conejo y esta nunca termina. 
+
+La solcion tomada a esto fue guardar en una tabla un string que tenga la inicial en ingles de la direccion, seguido de la casillaX y posterior la casillaY separada por guiones (esto para evitar ambiguedad), y revisar constantemente la casilla y direccion que tiene el conejo, ejemplo:
+
+```
+['u0_23','r3_4','d22_4','l1_1']
+```
+
+
+### Problema 2: Direccionador en casilla inicial
+
+Este problema esta mas sujeto a implementacion, interpretabilidad o bien ambiguedad o falta de informacion en la especificacion del proyecto, sea como sea: hay 2 posibles interpretaciones para esto:
+
+1) El conejo cambia su direccion al ingresar a la casilla con direccionador
+2) El conejo cambia su direccion al salir de la casilla con direccionador
+
+Para el proyecto se toma la primera interpretacion meramente como una desicion de implementacion, por lo tanto si hay un direccionador en la casilla de salida el conejo tomara su direccion original hasta encontrarse con un direccionador que cambie su direccion en una casilla que sea distinta de su casilla de salida
 
 ## Ejemplo
 
