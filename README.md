@@ -299,8 +299,7 @@ Duracion: 0 h:00 m:08.68 s
  ['<', ' ', 'v', 'v']] 
 ```
 
-### Mejor individuo generacion 2
-
+  
 ## Analisis
 
 # Conclusiones
