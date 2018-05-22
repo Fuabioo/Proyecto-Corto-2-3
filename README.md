@@ -319,4 +319,4 @@ Como se puede apreciar el algoritmo encuentra una solucion completa y luego de l
 
 ## Uso
 
-## Archivos de entrada
+## Archivos de entrada 
