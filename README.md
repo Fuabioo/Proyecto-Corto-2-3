@@ -279,7 +279,11 @@ Tablero:
 ```
 
 Resultado:
+
 ![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_1.png)
+Duracion: 0 h:00 m:01.80 s
+
+
 
 
 
