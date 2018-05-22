@@ -253,7 +253,7 @@ Este problema esta mas sujeto a implementacion, interpretabilidad o bien ambigue
 
 Para el proyecto se toma la primera interpretacion meramente como una desicion de implementacion, por lo tanto si hay un direccionador en la casilla de salida el conejo tomara su direccion original hasta encontrarse con un direccionador que cambie su direccion en una casilla que sea distinta de su casilla de salida
 
-## Ejemplo
+## Ejemplo 1
 Se corre un ejemplo con los siguientes parametros
 
 ### Parametros:
@@ -284,24 +284,31 @@ Se corre un ejemplo con los siguientes parametros
 
 Duracion: 0 h:00 m:08.68 s
 
-### Mejor individuo generacion 1 a 5
+### Mejor individuo generacion 0 a 5
 ``` python
 [[' ', 'C', 'Z', ' '],
  [' ', ' ', ' ', ' '],
  [' ', ' ', ' ', 'Z'],
  [' ', ' ', ' ', ' ']]
 ```
-### Mejor individuo generacion 6
+### Mejor individuo generacion 19
 ``` python
-[[' ', 'C', '>Z', 'v'],
- ['^', '^', '^', ' '],
- [' ', ' ', '^', '>Z'],
- ['<', ' ', 'v', 'v']] 
+[['<', 'C', 'vZ', ' '],
+ ['^', '>', ' ', ' '],
+ ['>', ' ', ' ', 'Z'],
+ ['^', ' ', '<', '>']]
 ```
 
-### Mejor individuo generacion 2
 
-## Analisis
+### Mejor individuo generacion 100
+``` python
+[[' ', '<C', 'vZ', ' '],
+[' ', ' ', ' ', '<'],
+[' ', ' ', '>', 'Z'],
+['v', 'v', '^', ' ']]
+```
+### Analisis
+Como se puede apreciar el algoritmo encuentra una solucion completa y luego de la generacion numero 100 mejora el Fitness eliminando un direccionador en comparacion a la solucion encontrada, la posibilidad de encontrar una mejora en una solucion es relativamente baja luego de alcanzar la completitud.
 
 # Conclusiones
 
