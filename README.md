@@ -485,7 +485,7 @@ Z  Z  Z
 
 ![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_2.png)
 
-### Mejor individuo generacion 0
+### Mejor individuo generacion 0 a 11
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
  ['C', 'Z', ' ', 'Z', 'Z', ' ', ' '],
@@ -495,57 +495,76 @@ Z  Z  Z
  ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
  [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
  ```
- ### Mejor individuo generacion 1
+ ### Mejor individuo generacion 12
 ``` python
-[['>', ' ', ' ', 'v', '^', ' ', ' '],
- ['>C', 'Z', '>', 'Z', 'vZ', ' ', ' '],
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
  [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
- [' ', 'Z', 'v', '<', '<Z', 'v', ' '],
- ['Z', ' ', '<', ' ', ' ', ' ', 'Z'],
- ['Z', 'v', ' ', 'Z', ' ', '>', 'Z'],
- [' ', '^', ' ', 'vZ', ' ', ' ', ' ']]
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
+ ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
+ [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
  
 ```
- ### Mejor individuo generacion 114
+ ### Mejor individuo generacion 20
 
 ``` python
-[['>', ' ', ' ', 'v', '^', ' ', ' '],
- ['vC', 'Z', '>', 'Z', 'vZ', ' ', ' '],
- [' ', 'v', ' ', '>Z', 'Z', ' ', 'Z'],
- [' ', 'Z', '^', '<', 'Z', 'v', ' '],
- ['Z', '^', '<', ' ', ' ', 'v', '^Z'],
- ['Z', ' ', ' ', 'Z', '<', '>', '^Z'],
- [' ', '^', ' ', 'vZ', ' ', ' ', '>']]
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
+ ['Z', ' ', ' ', 'Z', ' ', ' ', '<Z'],
+ [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
 ```
 
- ### Mejor individuo generacion 135
+ ### Mejor individuo generacion 30
 
 ``` python
-[['v', '>', ' ', 'v', '^', ' ', '>'],
- ['vC', 'Z', ' ', 'Z', 'vZ', ' ', ' '],
- ['<', 'v', '^', '>Z', 'Z', ' ', '<Z'],
- [' ', 'Z', '^', '<', 'Z', 'v', ' '],
- ['<Z', '^', '<', ' ', ' ', 'v', '^Z'],
- ['Z', ' ', '<', 'Z', '>', '>', '^Z'],
- ['^', '>', ' ', 'vZ', '<', '^', ' ']]
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
+ ['^Z', ' ', ' ', 'Z', ' ', ' ', '<Z'],
+ [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
 ```
 
+ ### Mejor individuo generacion 30
+
+``` python
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
+ ['^Z', ' ', ' ', 'Z', ' ', ' ', '<Z'],
+ [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
+```
+ ### Mejor individuo generacion 40
+
+``` python
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ ['>', 'Z', ' ', ' ', 'Z', ' ', ' '],
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
+ ['^Z', ' ', ' ', 'Z', ' ', ' ', '<Z'],
+ [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
+```
 ### Mejor individuo generacion 999
 ``` python
-[['v', ' ', ' ', 'v', '^', '>', ' '],
- ['^C', 'Z', ' ', '>Z', 'vZ', ' ', ' '],
- ['<', ' ', '>', '>Z', 'Z', ' ', '<Z'],
- ['^', 'Z', '^', '<', 'Z', 'v', ' '],
- ['<Z', '<', ' ', '<', ' ', '>', '^Z'],
- ['Z', ' ', '<', 'Z', '>', ' ', '^Z'],
- [' ', '^', ' ', 'vZ', '^', 'v', ' ']]
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
+ [' ', ' ', ' ', 'vZ', '<Z', ' ', 'Z'],
+ ['>', 'Z', ' ', ' ', '^Z', ' ', ' '],
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
+ ['^Z', ' ', ' ', 'Z', ' ', ' ', '<Z'],
+ [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
 ```
 
 ### Analisis
-Pese a que dados estos parametros y entradas no se llega a dar una completitud en la busqueda, el algoritmo muestra claramente como con el pasar de las generaciones la calidad de los individuos va mejorando, por lo que se puede concluir que el algoritmo funciona satisfactoriamente ya que busca buenas soluciones con relativo poco poder computacional.
-
-
-# Conclusiones
+A diferencia de la politica por filas, esta llega a una convergencia muchisimo mas rapida que el anterioir que en mil generaciones no llego a un resultado en el cual el conejo se comeria todas las zanahorias, lo que implica que aunque requiera mayor poder computacional por cada generacion realmente como llega a una convergencia mucho mas rapido el poder computacional requerido en general es menor.
 
 
 # Apéndice
