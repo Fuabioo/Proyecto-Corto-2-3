@@ -219,7 +219,7 @@ Existe posibilidad de que el conejo despues de colocar una serie de direccionado
 
 Enciclamiento Cuadrado/Rectangular
 
-```
+``` python
 [['v','C',' ','<'],
  [' ','Z',' ',' '],
  ['>',' ',' ','^'],
@@ -228,7 +228,7 @@ Enciclamiento Cuadrado/Rectangular
 
 Encilamiento en linea recta
 
-```
+``` python
 [['>','C',' ','<'],
  [' ','Z',' ',' '],
  [' ',' ',' ',' '],
@@ -239,7 +239,7 @@ Este tipo de casos causan que la funcion de aptitud (fitness) se encicle, ya que
 
 La solcion tomada a esto fue guardar en una tabla un string que tenga la inicial en ingles de la direccion, seguido de la casillaX y posterior la casillaY separada por guiones (esto para evitar ambiguedad), y revisar constantemente la casilla y direccion que tiene el conejo, ejemplo:
 
-```
+``` python
 ['u0_23','r3_4','d22_4','l1_1']
 ```
 
@@ -284,11 +284,22 @@ Se corre un ejemplo con los siguientes parametros
 
 Duracion: 0 h:00 m:08.68 s
 
-### Mejor individuo generacion 1
+### Mejor individuo generacion 1 a 5
+``` python
+[[' ', 'C', 'Z', ' '],
+ [' ', ' ', ' ', ' '],
+ [' ', ' ', ' ', 'Z'],
+ [' ', ' ', ' ', ' ']]
+```
+### Mejor individuo generacion 6
+``` python
+[[' ', 'C', '>Z', 'v'],
+ ['^', '^', '^', ' '],
+ [' ', ' ', '^', '>Z'],
+ ['<', ' ', 'v', 'v']] 
+```
 
-
-
-
+### Mejor individuo generacion 2
 
 ## Analisis
 
