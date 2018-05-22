@@ -279,7 +279,7 @@ Tablero:
 ```
 
 Resultado:
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_1.png)
 
 
 
