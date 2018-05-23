@@ -298,9 +298,15 @@ Se corre un ejemplo con los siguientes parámetros
 
 ### Tablero:
 ```
- CZ 
-    
-   Z
+┌───┬───┬───┬───┐
+│   │ C │ Z │   │
+├───┼───┼───┼───┤
+│   │   │   │   │
+├───┼───┼───┼───┤
+│   │   │   │ Z │
+├───┼───┼───┼───┤
+│   │   │   │   │
+└───┴───┴───┴───┘
 ```
 
 ### Resultado
@@ -509,7 +515,6 @@ Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocac
 
 
 ### Tablero:
-
 ```
 ┌───┬───┬───┬───┬───┬───┬───┐
 │   │   │   │   │   │   │   │
