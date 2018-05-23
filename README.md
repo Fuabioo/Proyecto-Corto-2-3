@@ -259,7 +259,7 @@ Se corre un ejemplo con los siguientes parámetros
 ### Parametros:
 - dirección inicial = derecha
 - individuos = 20
-- generaciones = 1000
+- generaciones = 100
 - probabilidad de mutación = 0.2
 - política de cruce = "Columnas"
 
@@ -284,28 +284,28 @@ Se corre un ejemplo con los siguientes parámetros
 
 Duracion: 0 h:00 m:08.68 s
 
-### Mejor individuo generación 0 a 5
+### Mejor individuo generación 0 a 6
 ``` python
 [[' ', 'C', 'Z', ' '],
  [' ', ' ', ' ', ' '],
  [' ', ' ', ' ', 'Z'],
  [' ', ' ', ' ', ' ']]
 ```
-### Mejor individuo generación 19
+### Mejor individuo generación 7
 ``` python
-[['<', 'C', 'vZ', ' '],
- ['^', '>', ' ', ' '],
- ['>', ' ', ' ', 'Z'],
- ['^', ' ', '<', '>']]
+[[' ', 'C', 'Z', 'v'],
+ ['v', ' ', ' ', ' '],
+ [' ', 'v', ' ', 'Z'],
+ [' ', ' ', ' ', ' ']]
 ```
 
 
-### Mejor individuo generación 100
+### Mejor individuo generación 99
 ``` python
-[[' ', '<C', 'vZ', ' '],
-[' ', ' ', ' ', '<'],
-[' ', ' ', '>', 'Z'],
-['v', 'v', '^', ' ']]
+[[' ', 'C', 'Z', 'v'],
+['>', ' ', ' ', ' '],
+[' ', ' ', ' ', 'Z'],
+[' ', ' ', ' ', ' ']]
 ```
 ### Analisis
 Como se puede apreciar el algoritmo encuentra una solución completa y luego de la generación número 100 mejora el Fitness eliminando un direccionador en comparacion a la solucion encontrada, la posibilidad de encontrar una mejora en una solución es relativamente baja luego de alcanzar la completitud.
@@ -353,50 +353,49 @@ Z  Z  Z
  ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
  [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
  ```
- ### Mejor individuo generacion 1
+ ### Mejor individuo generacion 50
 ``` python
-[['>', ' ', ' ', 'v', '^', ' ', ' '],
- ['>C', 'Z', '>', 'Z', 'vZ', ' ', ' '],
- [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
- [' ', 'Z', 'v', '<', '<Z', 'v', ' '],
- ['Z', ' ', '<', ' ', ' ', ' ', 'Z'],
- ['Z', 'v', ' ', 'Z', ' ', '>', 'Z'],
- [' ', '^', ' ', 'vZ', ' ', ' ', ' ']]
- 
+[[' ', ' ', ' ', '>', ' ', '^', '<'],
+ ['C', 'Z', ' ', 'Z', 'Z', 'v', ' '],
+ ['<', '^', 'v', 'Z', 'Z', ' ', 'Z'],
+ ['v', 'Z', ' ', ' ', 'Z', '<', '<'],
+ ['Z', ' ', ' ', 'v', ' ', 'v', 'Z'],
+ ['Z', ' ', ' ', 'Z', '>', ' ', 'Z'],
+ ['v', ' ', '>', 'Z', ' ', '>', ' ']]
 ```
- ### Mejor individuo generacion 114
+ ### Mejor individuo generacion 100
 
 ``` python
-[['>', ' ', ' ', 'v', '^', ' ', ' '],
- ['vC', 'Z', '>', 'Z', 'vZ', ' ', ' '],
- [' ', 'v', ' ', '>Z', 'Z', ' ', 'Z'],
- [' ', 'Z', '^', '<', 'Z', 'v', ' '],
- ['Z', '^', '<', ' ', ' ', 'v', '^Z'],
- ['Z', ' ', ' ', 'Z', '<', '>', '^Z'],
- [' ', '^', ' ', 'vZ', ' ', ' ', '>']]
+[['v', ' ', ' ', '>', ' ', '^', '>'], 
+ ['C', 'Z', ' ', 'Z', 'Z', 'v', ' '],
+ ['<', '^', '>', 'Z', 'Z', 'v', 'Z'],
+ ['v', 'Z', ' ', ' ', 'Z', '<', '<'],
+ ['Z', ' ', ' ', 'v', ' ', ' ', 'Z'],
+ ['Z', ' ', '<', 'Z', ' ', 'v', 'Z'],
+ ['>', ' ', '>', 'Z', ' ', ' ', ' ']]
 ```
 
- ### Mejor individuo generacion 135
+ ### Mejor individuo generacion 400
 
 ``` python
-[['v', '>', ' ', 'v', '^', ' ', '>'],
- ['vC', 'Z', ' ', 'Z', 'vZ', ' ', ' '],
- ['<', 'v', '^', '>Z', 'Z', ' ', '<Z'],
- [' ', 'Z', '^', '<', 'Z', 'v', ' '],
- ['<Z', '^', '<', ' ', ' ', 'v', '^Z'],
- ['Z', ' ', '<', 'Z', '>', '>', '^Z'],
- ['^', '>', ' ', 'vZ', '<', '^', ' ']]
+[['^', ' ', ' ', ' ', ' ', ' ', '^'], 
+ ['C', 'Z', ' ', 'Z', 'Z', 'v', ' '],
+ ['^', '<', '<', 'Z', 'Z', ' ', 'Z'],
+ ['v', 'Z', ' ', ' ', 'Z', '<', ' '],
+ ['Z', ' ', '^', '^', ' ', '^', 'Z'],
+ ['Z', '<', ' ', 'Z', ' ', '<', 'Z'],
+ ['>', ' ', ' ', 'Z', '^', ' ', '>']]
 ```
 
 ### Mejor individuo generacion 999
 ``` python
-[['v', ' ', ' ', 'v', '^', '>', ' '],
- ['^C', 'Z', ' ', '>Z', 'vZ', ' ', ' '],
- ['<', ' ', '>', '>Z', 'Z', ' ', '<Z'],
- ['^', 'Z', '^', '<', 'Z', 'v', ' '],
- ['<Z', '<', ' ', '<', ' ', '>', '^Z'],
- ['Z', ' ', '<', 'Z', '>', ' ', '^Z'],
- [' ', '^', ' ', 'vZ', '^', 'v', ' ']]
+[[' ', '<', ' ', ' ', '>', ' ', 'v'],
+ ['C', 'Z', ' ', 'Z', 'Z', 'v', ' '],
+ ['v', ' ', '^', 'Z', 'Z', ' ', 'Z'],
+ ['v', 'Z', ' ', ' ', 'Z', '<', ' '],
+ ['Z', '>', '^', '>', ' ', '^', 'Z'],
+ ['Z', '>', ' ', 'Z', ' ', ' ', 'Z'],
+ ['>', ' ', ' ', 'Z', '^', ' ', '^']]
 ```
 
 ### Analisis
@@ -434,26 +433,34 @@ Se corre un ejemplo con los siguientes parametros
 
 Duracion: 0 h:00 m:08.68 s
 
-### Mejor individuo generacion 0
+### Mejor individuo generacion 0 a 4
 ``` python
 [[' ', 'C', 'Z', ' '],
  [' ', ' ', ' ', ' '],
  [' ', ' ', ' ', 'Z'],
  [' ', ' ', ' ', ' ']]
 ```
-### Mejor individuo generacion 1 a 999
+### Mejor individuo generacion 5
+``` python
+[['>', 'C', 'Z', 'v'],
+ ['>', '>', ' ', ' '],
+ [' ', '^', '<', 'Z'],
+ [' ', '<', ' ', ' ']]
+```
+
+### Mejor individuo generacion 99
 ``` python
 [[' ', 'C', 'Z', 'v'],
- [' ', ' ', ' ', ' '],
+ ['>', '>', ' ', ' '],
  [' ', ' ', ' ', 'Z'],
- [' ', ' ', ' ', ' ']]
+ [' ', '<', ' ', ' ']]
 ```
 
 ### Analisis
 Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocacion particular se dio un caso donde la solucion perfecta se encontro en el primer caso, pero en particular converge a una solucion mejor mas rapido que la politica por columnas, cabe resaltar que el poder computacional requerido para esta politica es considerablemente mas alto.
 
 
-## Ejemplo 2
+## Ejemplo 4
 
 ### Parametros:
 - direccion inical = derecha
@@ -485,7 +492,7 @@ Z  Z  Z
 
 ![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_2.png)
 
-### Mejor individuo generacion 0 a 11
+### Mejor individuo generacion 0
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
  ['C', 'Z', ' ', 'Z', 'Z', ' ', ' '],
@@ -495,7 +502,18 @@ Z  Z  Z
  ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
  [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
  ```
- ### Mejor individuo generacion 12
+ ### Mejor individuo generacion 20
+``` python
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '], 
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'], 
+ ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'], 
+ [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
+```
+ ### Mejor individuo generacion 30
+
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
  ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
@@ -504,68 +522,59 @@ Z  Z  Z
  ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
  ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
  [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
- 
-```
- ### Mejor individuo generacion 20
-
-``` python
-[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
- ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
- [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
- [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
- ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
- ['Z', ' ', ' ', 'Z', ' ', ' ', '<Z'],
- [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
 ```
 
- ### Mejor individuo generacion 30
-
-``` python
-[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
- ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
- [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
- [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
- ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
- ['^Z', ' ', ' ', 'Z', ' ', ' ', '<Z'],
- [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
-```
-
- ### Mejor individuo generacion 30
-
-``` python
-[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
- ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
- [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
- [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
- ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
- ['^Z', ' ', ' ', 'Z', ' ', ' ', '<Z'],
- [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
-```
  ### Mejor individuo generacion 40
 
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
  ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
  [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
- ['>', 'Z', ' ', ' ', 'Z', ' ', ' '],
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
  ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
- ['^Z', ' ', ' ', 'Z', ' ', ' ', '<Z'],
- [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
+ ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
+ [' ', ' ', ' ', 'Z', ' ', ' ', '<']]
 ```
+
+ ### Mejor individuo generacion 50
+
+``` python
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
+ ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
+ [' ', ' ', ' ', 'Z', '^', ' ', '<']]
+```
+
+### Mejor individuo generacion 100
+``` python
+[[' ', ' ', ' ', ' ', ' ', ' ', ' '],
+ ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
+ ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
+ ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
+ [' ', ' ', ' ', 'Z', '^', ' ', '<']]
+```
+
 ### Mejor individuo generacion 999
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
  ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
- [' ', ' ', ' ', 'vZ', '<Z', ' ', 'Z'],
- ['>', 'Z', ' ', ' ', '^Z', ' ', ' '],
+ [' ', ' ', ' ', 'Z', 'Z', ' ', 'Z'],
+ [' ', 'Z', ' ', ' ', 'Z', ' ', ' '],
  ['Z', ' ', ' ', ' ', ' ', ' ', 'Z'],
- ['^Z', ' ', ' ', 'Z', ' ', ' ', '<Z'],
- [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
+ ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
+ [' ', ' ', ' ', 'Z', '^', ' ', '<']]
 ```
 
 ### Analisis
-A diferencia de la politica por filas, esta llega a una convergencia muchisimo mas rapida que el anterioir que en mil generaciones no llego a un resultado en el cual el conejo se comeria todas las zanahorias, lo que implica que aunque requiera mayor poder computacional por cada generacion realmente como llega a una convergencia mucho mas rapido el poder computacional requerido en general es menor.
+A diferencia de la politica por filas, esta llega a una convergencia muchisimo mas rapida que el anterior pero esta genero un resulta mas ineficiente que el anterior, ya que la mejor aptutid fue muchisimo mas baja
 
+
+## Analisis General
 
 # Apéndice
 
