@@ -171,9 +171,13 @@ PASO: 00003 IZQUIERDA: 4 DERECHA: N/A ARRIBA: N/A ABAJO: 2 MOVIMIENTO: ABAJO
 │ │ │ │ │
 └─┴─┴─┴─┘
 ```
-|  |  |  |  |
+|   |   |   |   |
 |:--:|:--:|:--:|:--:|
-|  |  |  |  |
+|   |   |   | C |
+|   |   |   | Z |
+|   |   |   |   |
+
+
 Como el conejo no ha comido ninguna zanahoria, se continúa con la búsqueda. Al estar la zanahoria en un nodo adyacente, la siguiente acción será devorarla. 
 
 | Nodo | Posicion |f(n) = g(n) + h(n) |
