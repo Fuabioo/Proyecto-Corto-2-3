@@ -14,6 +14,7 @@ Gabriel Venegas Castro - 2013115967
 # Contenidos
 
 Proyecto Corto 2 y 3 - Conejo y Zanahorias
+ > + Contexto del problema  
  > + Algoritmo A*  
  > +---- Descripción  
  > +---- Cálculo de heuristico  
@@ -29,7 +30,97 @@ Proyecto Corto 2 y 3 - Conejo y Zanahorias
  > +---- Uso  
  > +---- Archivos de entrada  
 
+# Contexto del problema
+
+Se tiene un conejo que debe comer cierta cantidad de zanahorias en un tablero de dimensiones NxM. En el siguiente trabajo se trabajan dos acercamientos que se le pueden dar al problema de buscar y comer las zanahorias:
+
++ Un algoritmo A* en el que el conejo se mueve un paso a la vez.
++ Un algoritmo Genetico en el que el conejo se mueve indefinidamente hacia una direccion que puede cambiar si se topa un "direccionador".
+
 # Algoritmo A*
+
+El objetivo principal de este algoritmo en este problema es encontrar para cada paso la direccion que cueste menos para llegar a las zanahorias, hasta satisfacer la cantidad especificada de zanahorias. Se define un "paso" como la obtencion de los pesos para los "nodos" en el campo visual especificado para el conejo, claramente si en alguno de estos nodos posee una zanahoria, el conejo prioriza ir a este nodo.
+
+```python
+def step(self):
+    current_pos = self.enviroment["bunny"]
+    costs, next_node = self.get_neighbour_costs()
+
+    best_direction = get_direction(current_pos, next_node)
+
+    if best_direction == self.last:
+        self.counter += 1
+    if self.counter > 15:
+        access = self.graph.neighbors(current_pos)
+        access.pop(next_node)
+        next_node = access[random.randint(0, len(access)-1)]
+        best_direction = get_direction(current_pos, next_node)
+
+    # Move bunny and eat if there is a carrot
+    self.enviroment["bunny"] = next_node
+    if self.graph.nodes[next_node].consume_carrot():
+        self.enviroment["carrot"].remove(next_node)
+        self.args.zanahorias -= 1
+
+    costs["MOVIMIENTO"] = best_direction
+    return costs
+```
+
+La idea principal es que basados en la posicion actual del conejo, se exploran los nodos dentro del campo visual del conejo, al obtener todos los costos como descrito anteriormente entonces se determina la mejor direccion a tomar.
+
+Si se llevan 15 pasos en la misma direccion, se determina que el conejo podria estar enciclado, por lo que decidimos que se cambie la direccion independientemente de los costos con el objetivo de intentar salirse del ciclo. Sin embargo podria darse el caso de que realmente vaya todo bien y se randomiza la direccion, en cuyo caso simplemente el conejo se corrige a si mismo cuando corre el algoritmo en el siguiente paso.
+
+Luego si se pasa sobre una zanahoria, pues el conejo se la come.
+
+Para la implementacion del algoritmo, se determina si hay algun nodo en el campo visual del conejo con una zanahoria, de no ser asi pues se randomiza el nodo destino.
+```python
+for valid_node in accesible_nodes:
+    if self.graph.nodes[valid_node].carrot:
+        all_costs, next_node = self.get_cost_direction(
+            valid_node, accesible_nodes)
+        break
+if all_costs == {}:
+    posibilities = self.graph.neighbors(self.enviroment["bunny"])
+    index = random.randint(0, len(posibilities) - 1)
+    key = list(posibilities)[index]
+    all_costs, next_node = self.get_cost_direction(
+        key, accesible_nodes)
+```
+Una vez decidido el nodo destino, se obtienen los costos y se detemina el nodo con el minimo costo
+```python
+costs, path = self.a_star_search(node, accesible_nodes)
+```
+Ya propiamente para la implementacion del algoritmo, se define una cola prioritaria para los valores frontera (**frontier**) que se inicializa con el nodo en el que se encuentra el conejo actualmente, luego se van expandiendo los nodos, calculando el costo acumulado para la ruta tomada y el heuristico, y se actualiza el frontier. 
+```python
+initial = self.enviroment["bunny"]
+frontier = PriorityQueue()
+frontier.push(element=initial, priority=0)
+
+accumulated_cost = {initial: 0}
+paths = {}
+
+result = {}
+
+end = False
+while frontier:
+    current = frontier.pop()
+
+    if current == goal or end:
+        break
+
+    for node in self.graph.neighbors(current):
+        if node in accesible_nodes:  # Node in vision field?
+            # cost from current to neighbor = 1
+            current_cost = accumulated_cost[current] + 1
+            if node not in accumulated_cost or current_cost < accumulated_cost[node]:
+                accumulated_cost[node] = current_cost
+                # f(n) = g(n) + h(n)
+                priority = current_cost + heuristic(goal, node)
+                result[get_direction(current, node)] = priority
+                paths[current] = node
+                frontier.push(element=node, priority=priority)
+```
+
 
 ## Calculo de heurístico
 
