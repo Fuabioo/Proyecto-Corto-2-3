@@ -790,37 +790,36 @@ python setup.py install
 
 | Parametro | Valor valido | Predeterminado |
 | ---: | :--- | :---: |
-| tablero-inicial | string: nombre de los archivos | |
-| vision | número entero mayor a 0 | 2 |
-| zanahorias | número entero mayor a 0 | 10 |
-| limite | número entero mayor a 0 | 200 |
+| tablero-inicial | string: nombre de los archivos | `N/A` |
+| vision | número entero mayor a 0 | `2` |
+| zanahorias | número entero mayor a 0 | `10` |
+| limite | número entero mayor a 0 | `200` |
 
 | Bandera | Predeterminado |
 | ---: | :---: |
-| a-estrella | False |
-| debug | Fabiolse |
+| a-estrella | `False` |
+| debug | `False` |
 
 
 **Argumentos Genetico**
 
 | Parametro | Valor valido | Predeterminado |
 | ---: | :--- | :---: |
-| individuos | número entero mayor a 0 | 3 |
-| generaciones | número entero mayor a 0 | 1000 |
-| taza-mutacion | punto flotante mayor a 0 | 0.5 |
-| politica | string: gen/row | gen |
+| individuos | número entero mayor a 0 | `3` |
+| generaciones | número entero mayor a 0 | `1000` |
+| taza-mutacion | punto flotante mayor a 0 | `0.5` |
+| politica | string: gen/row | `gen` |
 
 | Bandera | Predeterminado |
 | ---: | :---: |
-| genetico | False |
-| derecha | False |
-| izquierda | False |
-| abajo | False |
-| arriba | False |
-| ---: | :--- | :---: |
-| debug | False |
-| show-graphic | False |
-| guardar-archivos | True |
+| genetico | `False` |
+| derecha | `False` |
+| izquierda | `False` |
+| abajo | `False` |
+| arriba | `False` |
+| debug | `False` |
+| show-graphic | `False` |
+| guardar-archivos | `True` |
 
 **Estructura de codigo**
 
@@ -853,4 +852,11 @@ python ejemplo.py --tablero-inicial entrada.txt --genetico --derecha --individuo
 
 ## Archivos de entrada 
 
+Los archivos de entrada pueden ser un tablero cuadrado o rectangular, con los siguientes caracteres:
 
+| Caracter | Descripcion |
+| :---: | :--- |
+| `C` | Indica la posicion inicial del conejo |
+| `Z` | Indica posicion de zanahoria |
+| Espacio en blanco | Posicion vacia en el tablero |
+| `\n` | Indica el final de una fila |
