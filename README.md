@@ -52,15 +52,15 @@ Tablero inicial: 4x4 (con total de 2 zanahorias)
 
 ### Paso 00001
 ```
-┌─┬─┬─┬─┐
-│ │C│Z│ │
-├─┼─┼─┼─┤
-│ │ │ │ │
-├─┼─┼─┼─┤
-│ │ │ │Z│
-├─┼─┼─┼─┤
-│ │ │ │ │
-└─┴─┴─┴─┘
+┌───┬───┬───┬───┐
+│   │ C │ Z │   │
+├───┼───┼───┼───┤
+│   │   │   │   │
+├───┼───┼───┼───┤
+│   │   │   │ Z │
+├───┼───┼───┼───┤
+│   │   │   │   │
+└───┴───┴───┴───┘
 ```
 Podemos notar que en la posición derecha al conejo hay una zanahoria, esto implica que el conejo va a querer ir ahí, por lo que ese sería su nodo destino.
 
@@ -86,15 +86,15 @@ PASO: 00001 IZQUIERDA: 3 DERECHA: 1 ARRIBA: N/A ABAJO: 3 MOVIMIENTO: DERECHA
 
 ### Paso 00002
 ```
-┌─┬─┬─┬─┐
-│ │ │C│ │
-├─┼─┼─┼─┤
-│ │ │ │ │
-├─┼─┼─┼─┤
-│ │ │ │Z│
-├─┼─┼─┼─┤
-│ │ │ │ │
-└─┴─┴─┴─┘
+┌───┬───┬───┬───┐
+│   │   │ C │   │
+├───┼───┼───┼───┤
+│   │   │   │   │
+├───┼───┼───┼───┤
+│   │   │   │ Z │
+├───┼───┼───┼───┤
+│   │   │   │   │
+└───┴───┴───┴───┘
 ```
 En el paso anterior el conejo devoró una zanahoria, por lo que debe buscar otra. Podemos notar que el conejo puede ver una zanahoria a lo lejos, esto implica que el conejo va a querer ir ahí, por lo que ese sería su nodo destino.
 
@@ -126,15 +126,15 @@ PASO: 00002 IZQUIERDA: 5 DERECHA: 3 ARRIBA: N/A ABAJO: 5 MOVIMIENTO: DERECHA
 
 ### Paso 00003
 ```
-┌─┬─┬─┬─┐
-│ │ │ │C│
-├─┼─┼─┼─┤
-│ │ │ │ │
-├─┼─┼─┼─┤
-│ │ │ │Z│
-├─┼─┼─┼─┤
-│ │ │ │ │
-└─┴─┴─┴─┘
+┌───┬───┬───┬───┐
+│   │   │   │ C │
+├───┼───┼───┼───┤
+│   │   │   │   │
+├───┼───┼───┼───┤
+│   │   │   │ Z │
+├───┼───┼───┼───┤
+│   │   │   │   │
+└───┴───┴───┴───┘
 ```
 Como el conejo no ha comido ninguna zanahoria, se continúa con la búsqueda.
 
@@ -161,23 +161,16 @@ PASO: 00003 IZQUIERDA: 4 DERECHA: N/A ARRIBA: N/A ABAJO: 2 MOVIMIENTO: ABAJO
 
 ### Paso 00004
 ```
-┌─┬─┬─┬─┐
-│ │ │ │ │
-├─┼─┼─┼─┤
-│ │ │ │C│
-├─┼─┼─┼─┤
-│ │ │ │Z│
-├─┼─┼─┼─┤
-│ │ │ │ │
-└─┴─┴─┴─┘
+┌───┬───┬───┬───┐
+│   │   │   │   │
+├───┼───┼───┼───┤
+│   │   │   │ C │
+├───┼───┼───┼───┤
+│   │   │   │ Z │
+├───┼───┼───┼───┤
+│   │   │   │   │
+└───┴───┴───┴───┘
 ```
-|   |   |   |   |
-|:--:|:--:|:--:|:--:|
-|   |   |   | C |
-|   |   |   | Z |
-|   |   |   |   |
-
-
 Como el conejo no ha comido ninguna zanahoria, se continúa con la búsqueda. Al estar la zanahoria en un nodo adyacente, la siguiente acción será devorarla. 
 
 | Nodo | Posicion |f(n) = g(n) + h(n) |
@@ -203,15 +196,15 @@ PASO: 00004 IZQUIERDA: 3 DERECHA: N/A ARRIBA: 3 ABAJO: 1 MOVIMIENTO: ABAJO
 
 ### Paso 00005 - FINAL
 ```
-┌─┬─┬─┬─┐
-│ │ │ │ │
-├─┼─┼─┼─┤
-│ │ │ │ │
-├─┼─┼─┼─┤
-│ │ │ │C│
-├─┼─┼─┼─┤
-│ │ │ │ │
-└─┴─┴─┴─┘
+┌───┬───┬───┬───┐
+│   │   │   │   │
+├───┼───┼───┼───┤
+│   │   │   │   │
+├───┼───┼───┼───┤
+│   │   │   │ C │
+├───┼───┼───┼───┤
+│   │   │   │   │
+└───┴───┴───┴───┘
 ```
 En el paso anterior el conejo devoró una zanahoria, pero como ya consumió todas las que debía consumir, el algoritmo termina.
 
