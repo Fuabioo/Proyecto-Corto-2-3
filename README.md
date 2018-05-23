@@ -219,6 +219,10 @@ Duracion: 0 h:00 m:00.02 s
 
 En base al ejemplo anterior, podemos hacer varias pruebas sobre el algoritmo:
 
+![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_5.png)
+![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_6.png)
+![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_7.png)
+![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_8.png)
 
 
 # Algoritmo Genetico
