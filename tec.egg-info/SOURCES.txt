@@ -1,3 +1,4 @@
+README.md
 setup.py
 src/tec/__init__.py
 src/tec/ic/__init__.py
@@ -18,9 +19,9 @@ src/tec/ic/ia/pc1/g08.py
 src/tec/ic/ia/pc1/indicadores.py
 src/tec/ic/ia/pc2/__init__.py
 src/tec/ic/ia/pc2/a_star.py
-src/tec/ic/ia/pc2/data_gathering_astar.py
 src/tec/ic/ia/pc2/data_structures.py
 src/tec/ic/ia/pc2/g08.py
+src/tec/ic/ia/pc2/genetic _old.py
 src/tec/ic/ia/pc2/genetic.py
 src/tec/ic/ia/pc2/test_astar.py
 src/tec/ic/ia/pc2/test_input.py

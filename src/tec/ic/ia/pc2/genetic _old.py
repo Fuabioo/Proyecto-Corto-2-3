@@ -161,6 +161,9 @@ class Genetic:
                 else:
                     bunny_y += 1
 
+            if len(individual[bunny_x][bunny_y]) == 2:
+                individual[bunny_x][bunny_y] = individual[bunny_x][bunny_y][:-1]
+                carrots -= 1
             if individual[bunny_x][bunny_y] == "Z":
                 carrots -= 1
                 individual[bunny_x][bunny_y] = " "
@@ -234,12 +237,21 @@ class Genetic:
         return kids
 
     def mute(self, to_mute):
-        gens = ["<", ">", "^", "v", " "]
+        gens = ["<", ">", "^", "v", ""]
         directions = []
         for person in to_mute:
             x, y = random.randint( 0, len(person) - 1), random.randint(0, len(person[0]) - 1)
             mutation = random.choice(gens)
-            if person[x][y] != "C" and person[x][y] != "Z":
+            if person[x][y] == "C" or person[x][y] == "Z":
+                person[x][y] = mutation + person[x][y]
+            elif len(person[x][y]) > 1:
+                if person[x][y][1] == "Z":
+                    person[x][y] = mutation + "Z"
+                elif person[x][y][1] == "C":
+                    person[x][y] = mutation + "C"
+            else:
+                if mutation == "":
+                    mutation = " "
                 person[x][y] = mutation
         return to_mute
 

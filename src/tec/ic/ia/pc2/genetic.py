@@ -161,9 +161,6 @@ class Genetic:
                 else:
                     bunny_y += 1
 
-            if len(individual[bunny_x][bunny_y]) == 2:
-                individual[bunny_x][bunny_y] = individual[bunny_x][bunny_y][:-1]
-                carrots -= 1
             if individual[bunny_x][bunny_y] == "Z":
                 carrots -= 1
                 individual[bunny_x][bunny_y] = " "
@@ -221,7 +218,11 @@ class Genetic:
             scores.append(self.fitness(copy.deepcopy(population[0])))
             if self.save_files:
                 self.create_file(population, i)
-
+                
+            print("GENERACION: "+str(i).zfill(5))
+            bck = copy.deepcopy(population)
+            for i in range(size_of_population):
+                print("INDIVIDUO "+str(i).zfill(5)+ " APTITUD:" + str(self.fitness(bck[i])))
         return result, scores
 
     def new_generation(self, population, size_of_population):
@@ -237,21 +238,12 @@ class Genetic:
         return kids
 
     def mute(self, to_mute):
-        gens = ["<", ">", "^", "v", ""]
+        gens = ["<", ">", "^", "v", " "]
         directions = []
         for person in to_mute:
             x, y = random.randint( 0, len(person) - 1), random.randint(0, len(person[0]) - 1)
             mutation = random.choice(gens)
-            if person[x][y] == "C" or person[x][y] == "Z":
-                person[x][y] = mutation + person[x][y]
-            elif len(person[x][y]) > 1:
-                if person[x][y][1] == "Z":
-                    person[x][y] = mutation + "Z"
-                elif person[x][y][1] == "C":
-                    person[x][y] = mutation + "C"
-            else:
-                if mutation == "":
-                    mutation = " "
+            if person[x][y] != "C" and person[x][y] != "Z":
                 person[x][y] = mutation
         return to_mute
 
