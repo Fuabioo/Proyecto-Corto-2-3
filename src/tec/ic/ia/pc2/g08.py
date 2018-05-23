@@ -57,24 +57,6 @@ def get_result(algorithm="AStar", args=None):
 def main():
     """ Main execution """
     args = get_args()
-    # testing args astar
-    # args.a_estrella = True
-    # args.vision = 15
-    # args.zanahorias = 10
-    # #args.limite = 1000
-    # args.tablero_inicial = "_generated_inputs_/25x25(50).txt"
-    # args.tablero_inicial = "4x4(2).txt"
-    # args.debug = True
-
-    # testing args genetis
-    # args.genetico = True
-    # args.derecha = True
-    # args.individuos = 20
-    # args.generaciones = 10
-    # args.vision = 4
-    # args.zanahorias = 2
-    # args.tablero_inicial = "4x4(2).txt"
-    # args.show_graphic = True
     result = None
     if args.a_estrella:
         result = get_result(algorithm="AStar", args=args)
