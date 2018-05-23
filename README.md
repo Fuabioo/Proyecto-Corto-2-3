@@ -35,7 +35,7 @@ Proyecto Corto 2 y 3 - Conejo y Zanahorias
 Se tiene un conejo que debe comer cierta cantidad de zanahorias en un tablero de dimensiones NxM. En el siguiente trabajo se trabajan dos acercamientos que se le pueden dar al problema de buscar y comer las zanahorias:
 
 + Un algoritmo A* en el que el conejo se mueve un paso a la vez.
-+ Un algoritmo Genetico en el que el conejo se mueve indefinidamente hacia una direccion que puede cambiar si se topa un "direccionador".
++ Un algoritmo Genético en el que el conejo se mueve indefinidamente hacia una direccion que puede cambiar si se topa un "direccionador".
 
 # Algoritmo A*
 
@@ -72,7 +72,7 @@ Si se llevan 15 pasos en la misma direccion, se determina que el conejo podria e
 
 Luego si se pasa sobre una zanahoria, pues el conejo se la come.
 
-Para la implementacion del algoritmo, se determina si hay algun nodo en el campo visual del conejo con una zanahoria, de no ser asi pues se randomiza el nodo destino.
+Para la implementación del algoritmo, se determina si hay algun nodo en el campo visual del conejo con una zanahoria, de no ser asi pues se randomiza el nodo destino.
 ```python
 for valid_node in accesible_nodes:
     if self.graph.nodes[valid_node].carrot:
@@ -90,7 +90,7 @@ Una vez decidido el nodo destino, se obtienen los costos y se detemina el nodo c
 ```python
 costs, path = self.a_star_search(node, accesible_nodes)
 ```
-Ya propiamente para la implementacion del algoritmo, se define una cola prioritaria para los valores frontera (**frontier**) que se inicializa con el nodo en el que se encuentra el conejo actualmente, luego se van expandiendo los nodos, calculando el costo acumulado para la ruta tomada y el heuristico, y se actualiza el frontier. 
+Ya propiamente para la implementación del algoritmo, se define una cola prioritaria para los valores frontera (**frontier**) que se inicializa con el nodo en el que se encuentra el conejo actualmente, luego se van expandiendo los nodos, calculando el costo acumulado para la ruta tomada y el heuristico, y se actualiza el frontier. 
 ```python
 initial = self.enviroment["bunny"]
 frontier = PriorityQueue()
@@ -306,9 +306,9 @@ Conejo satisfecho!
 Duracion: 0 h:00 m:00.02 s
 ```
 
-## Analisis
+## Análisis
 
-En base al ejemplo anterior, podemos hacer varias pruebas sobre el algoritmo. Para efectos de pruebas definimos un limite predeterminado de 200 pasos, luego de esta cantidad de pasos el algoritmo se detiene incluso si si no se han consumido las zanahorias requeridas. Notese que esto no quiere decir que no haya solucion, mas bien es una decision basada en eficiencia, por lo que se dejo el limite como un parametro mas que se le puede pasar al programa por la consola de comandos.
+En base al ejemplo anterior, podemos hacer varias pruebas sobre el algoritmo. Para efectos de pruebas definimos un limite predeterminado de 200 pasos, luego de esta cantidad de pasos el algoritmo se detiene incluso si si no se han consumido las zanahorias requeridas. Notese que esto no quiere decir que no haya solución, mas bien es una decision basada en eficiencia, por lo que se dejo el limite como un parametro mas que se le puede pasar al programa por la consola de comandos.
 
 ### Ejecucion 1
 
@@ -352,7 +352,7 @@ El problema base que se nota en las ejecuciones es que entre mas grande el table
 
 En general, la completitud del problema se ve siempre determinada por la ubicacion de las zanahorias y la posicion inicial del conejo, ademas de si el camino de zanahorias lleva a un dead end, lo cual nos lleva a concluir que no se puede garantizar siempre la completitud de un algoritmo A* con un campo de vision.
 
-# Algoritmo Genetico
+# Algoritmo Genético
 
 Un algoritmo genético, es una especialización del algoritmo beam search, que se usa para resolver algunos problemas de búsqueda. Este algoritmo está inspirado en la evolución biológica y su base genético-molecular.
 
@@ -393,7 +393,7 @@ Encilamiento en línea recta
 
 Este tipo de casos causan que la funcion de aptitud (fitness) se encicle, ya que esta tiene que evaluar la ruta del conejo y esta nunca termina. 
 
-La solcion tomada a esto fue guardar en una tabla un string que tenga la inicial en ingles de la direccion, seguido de la casillaX y posterior la casillaY separada por guiones (esto para evitar ambiguedad), y revisar constantemente la casilla y direccion que tiene el conejo, ejemplo:
+La solcion tomada a esto fue guardar en una tabla un string que tenga la inicial en ingles de la dirección, seguido de la casillaX y posterior la casillaY separada por guiones (esto para evitar ambiguedad), y revisar constantemente la casilla y dirección que tiene el conejo, ejemplo:
 
 ``` python
 ['u0_23','r3_4','d22_4','l1_1']
@@ -469,8 +469,8 @@ Duracion: 0 h:00 m:08.68 s
 [' ', ' ', ' ', 'Z'],
 [' ', ' ', ' ', ' ']]
 ```
-### Analisis
-Como se puede apreciar el algoritmo encuentra una solución completa y luego de la generación número 100 mejora el Fitness eliminando un direccionador en comparacion a la solucion encontrada, la posibilidad de encontrar una mejora en una solución es relativamente baja luego de alcanzar la completitud.
+### Análisis
+Como se puede apreciar el algoritmo encuentra una solución completa y luego de la generación número 100 mejora el Fitness eliminando un direccionador en comparacion a la solución encontrada, la posibilidad de encontrar una mejora en una solución es relativamente baja luego de alcanzar la completitud.
 
 
 ## Ejemplo 2
@@ -512,7 +512,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa y luego de 
 
 ![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_2.png)
 
-### Mejor individuo generacion 0
+### Mejor individuo generación 0
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
  ['C', 'Z', ' ', 'Z', 'Z', ' ', ' '],
@@ -522,7 +522,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa y luego de 
  ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
  [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
  ```
- ### Mejor individuo generacion 50
+ ### Mejor individuo generación 50
 ``` python
 [[' ', ' ', ' ', '>', ' ', '^', '<'],
  ['C', 'Z', ' ', 'Z', 'Z', 'v', ' '],
@@ -532,7 +532,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa y luego de 
  ['Z', ' ', ' ', 'Z', '>', ' ', 'Z'],
  ['v', ' ', '>', 'Z', ' ', '>', ' ']]
 ```
- ### Mejor individuo generacion 100
+ ### Mejor individuo generación 100
 
 ``` python
 [['v', ' ', ' ', '>', ' ', '^', '>'], 
@@ -544,7 +544,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa y luego de 
  ['>', ' ', '>', 'Z', ' ', ' ', ' ']]
 ```
 
- ### Mejor individuo generacion 400
+ ### Mejor individuo generación 400
 
 ``` python
 [['^', ' ', ' ', ' ', ' ', ' ', '^'], 
@@ -556,7 +556,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa y luego de 
  ['>', ' ', ' ', 'Z', '^', ' ', '>']]
 ```
 
-### Mejor individuo generacion 999
+### Mejor individuo generación 999
 ``` python
 [[' ', '<', ' ', ' ', '>', ' ', 'v'],
  ['C', 'Z', ' ', 'Z', 'Z', 'v', ' '],
@@ -567,8 +567,8 @@ Como se puede apreciar el algoritmo encuentra una solución completa y luego de 
  ['>', ' ', ' ', 'Z', '^', ' ', '^']]
 ```
 
-### Analisis
-Pese a que dados estos parametros y entradas no se llega a dar una completitud en la busqueda, el algoritmo muestra claramente como con el pasar de las generaciones la calidad de los individuos va mejorando, por lo que se puede concluir que el algoritmo funciona satisfactoriamente ya que busca buenas soluciones con relativo poco poder computacional.
+### Análisis
+Pese a que dados estos parametros y entradas no se llega a dar una completitud en la busqueda, el algoritmo muestra claramente como con el pasar de las generaciones la calidad de los individuos va mejorando, por lo que se puede concluir que el algoritmo funciona satisfactoriamente ya que busca buenas soluciónes con relativo poco poder computacional.
 
 
 ## Ejemplo 3
@@ -608,14 +608,14 @@ Se corre un ejemplo con los siguientes parametros
 
 Duracion: 0 h:00 m:08.68 s
 
-### Mejor individuo generacion 0 a 4
+### Mejor individuo generación 0 a 4
 ``` python
 [[' ', 'C', 'Z', ' '],
  [' ', ' ', ' ', ' '],
  [' ', ' ', ' ', 'Z'],
  [' ', ' ', ' ', ' ']]
 ```
-### Mejor individuo generacion 5
+### Mejor individuo generación 5
 ``` python
 [['>', 'C', 'Z', 'v'],
  ['>', '>', ' ', ' '],
@@ -623,7 +623,7 @@ Duracion: 0 h:00 m:08.68 s
  [' ', '<', ' ', ' ']]
 ```
 
-### Mejor individuo generacion 99
+### Mejor individuo generación 99
 ``` python
 [[' ', 'C', 'Z', 'v'],
  ['>', '>', ' ', ' '],
@@ -631,8 +631,8 @@ Duracion: 0 h:00 m:08.68 s
  [' ', '<', ' ', ' ']]
 ```
 
-### Analisis
-Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocacion particular se dio un caso donde la solucion perfecta se encontro en el primer caso, pero en particular converge a una solucion mejor mas rapido que la politica por columnas, cabe resaltar que el poder computacional requerido para esta politica es considerablemente mas alto.
+### Análisis
+Como se puede apreciar el algoritmo encuentra una solución completa en esta ocacion particular se dio un caso donde la solución perfecta se encontró en el primer caso, pero en particular converge a una solución mejor mas rápido que la política por columnas, cabe resaltar que el poder computacional requerido para esta política es considerablemente más alto.
 
 
 ## Ejemplo 4
@@ -642,7 +642,7 @@ Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocac
 - individuos = 20
 - generaciones = 1000
 - probabilidad de mutacion = 0.2
-- politica de cruce = "Columnas"
+- política de cruce = "Columnas"
 
 
 ### Parametros de evolucion:
@@ -674,7 +674,7 @@ Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocac
 
 ![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_2.png)
 
-### Mejor individuo generacion 0
+### Mejor individuo generación 0
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
  ['C', 'Z', ' ', 'Z', 'Z', ' ', ' '],
@@ -684,7 +684,7 @@ Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocac
  ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'],
  [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
  ```
- ### Mejor individuo generacion 20
+ ### Mejor individuo generación 20
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
  ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
@@ -694,7 +694,7 @@ Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocac
  ['Z', ' ', ' ', 'Z', ' ', ' ', 'Z'], 
  [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
 ```
- ### Mejor individuo generacion 30
+ ### Mejor individuo generación 30
 
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
@@ -706,7 +706,7 @@ Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocac
  [' ', ' ', ' ', 'Z', ' ', ' ', ' ']]
 ```
 
- ### Mejor individuo generacion 40
+ ### Mejor individuo generación 40
 
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
@@ -718,7 +718,7 @@ Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocac
  [' ', ' ', ' ', 'Z', ' ', ' ', '<']]
 ```
 
- ### Mejor individuo generacion 50
+ ### Mejor individuo generación 50
 
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
@@ -730,7 +730,7 @@ Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocac
  [' ', ' ', ' ', 'Z', '^', ' ', '<']]
 ```
 
-### Mejor individuo generacion 100
+### Mejor individuo generación 100
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
  ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
@@ -741,7 +741,7 @@ Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocac
  [' ', ' ', ' ', 'Z', '^', ' ', '<']]
 ```
 
-### Mejor individuo generacion 999
+### Mejor individuo generación 999
 ``` python
 [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
  ['C', 'Z', ' ', 'Z', 'Z', ' ', 'v'],
@@ -752,19 +752,19 @@ Como se puede apreciar el algoritmo encuentra una solucion completa en esta ocac
  [' ', ' ', ' ', 'Z', '^', ' ', '<']]
 ```
 
-### Analisis
-A diferencia de la politica por filas, esta llega a una convergencia muchisimo mas rapida que el anterior pero esta genero un resulta mas ineficiente que el anterior, ya que la mejor aptutid fue muchisimo mas baja
+### Análisis
+A diferencia de la política por filas, esta llega a una convergencia muchísimo mas rapida que el anterior pero esta genero un resulta mas ineficiente que el anterior, ya que la mejor aptutid fue muchísimo mas baja
 
 
-# Analisis sobre politicas de cruce
+# Análisis sobre políticas de cruce
 
-## Politica de filas/columnas
+## Política de filas/columnas
 
-Esta politica toma aleatoriamente un porcentaje de filas de un individuo padre y el restante de un individuo madre, de manera que los hijos tienen una herencia mas fuerte de los padres, ya que esta toma algo similar a fragmentos de ADN, lo cual hace que los rasgos de sus padres prevalezcan. Esta funcion genera una convergencia lenta, pero por lo general preseta aptitudes mas altas y es considerablemente mas rapida, esto ultimo puede deberse a efectos de implementacion.
+Esta política toma aleatoriamente un porcentaje de filas de un individuo padre y el restante de un individuo madre, de manera que los hijos tienen una herencia mas fuerte de los padres, ya que esta toma algo similar a fragmentos de ADN, lo cual hace que los rasgos de sus padres prevalezcan. Esta funcion genera una convergencia lenta, pero por lo general preseta aptitudes mas altas y es considerablemente mas rapida, esto ultimo puede deberse a efectos de implementación.
 
-## Politica de genes
+## Política de genes
 
-Esta politica toma aleatoriamente genes de su padre o madre, lo cual puede hacer que sis hijos difieran de sus padres directos y genera una mayor variabilidad a corto plazo de los individuos. Esta funcion genera una convergencia mas rapida que la anterior, pero sus aptitudes son mas bajas, esto puede ser por efectos de implementacion, ademas tiene una complejidad computacion mas alta.
+Esta política toma aleatoriamente genes de su padre o madre, lo cual puede hacer que sis hijos difieran de sus padres directos y genera una mayor variabilidad a corto plazo de los individuos. Esta funcion genera una convergencia mas rapida que la anterior, pero sus aptitudes son mas bajas, esto puede ser por efectos de implementación, ademas tiene una complejidad computacion mas alta.
 
 
 # Apéndice
@@ -801,7 +801,7 @@ python setup.py install
 | debug | `False` |
 
 
-**Argumentos Genetico**
+**Argumentos Genético**
 
 | Parametro | Valor valido | Predeterminado |
 | ---: | :--- | :---: |
@@ -839,12 +839,12 @@ Considerando que un archivo python `ejemplo.py` tenga la estructura anterior y q
 python ejemplo.py --tablero-inicial entrada.txt --a-estrella --vision 5 --zanahorias 2
 ```
 
-Considerando que un archivo python `ejemplo.py` tenga la estructura anterior y que lo que queremos es correr un algoritmo genetico:
+Considerando que un archivo python `ejemplo.py` tenga la estructura anterior y que lo que queremos es correr un algoritmo genético:
 
 ```bash
 python ejemplo.py --tablero-inicial entrada.txt --genetico --derecha --individuos 3 --generaciones 1000
 ```
-Tambien se puede especificar la taza de mutacion y la politica de cruces:
+Tambien se puede especificar la taza de mutacion y la política de cruces:
 ```bash
 python ejemplo.py --tablero-inicial entrada.txt --genetico --derecha --individuos 3 --generaciones 1000 --taza-mutacion 0.4 --politica row
 ```
