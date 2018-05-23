@@ -846,7 +846,7 @@ python ejemplo.py --tablero-inicial entrada.txt --genetico --derecha --individuo
 ```
 Tambien se puede especificar la taza de mutacion y la politica de cruces:
 ```bash
-python ejemplo.py --tablero-inicial entrada.txt --genetico --derecha --individuos 3 --generaciones 1000 --taza-mutacion 0.4 --politica gen
+python ejemplo.py --tablero-inicial entrada.txt --genetico --derecha --individuos 3 --generaciones 1000 --taza-mutacion 0.4 --politica row
 ```
 
 
