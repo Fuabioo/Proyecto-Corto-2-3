@@ -771,7 +771,85 @@ Esta politica toma aleatoriamente genes de su padre o madre, lo cual puede hacer
 
 ## Instalación
 
+**Opción #1:**
+
+```bash
+python setup.py sdist
+python -m pip install dist/tec-2.X.tar.gz
+```
+
+**Opción #2:**
+
+```bash
+python setup.py install
+```
+
 ## Uso
+
+**Argumentos A\***
+
+| Parametro | Valor valido | Predeterminado |
+| ---: | :--- | :---: |
+| tablero-inicial | string: nombre de los archivos | |
+| vision | número entero mayor a 0 | 2 |
+| zanahorias | número entero mayor a 0 | 10 |
+| limite | número entero mayor a 0 | 200 |
+
+| Bandera | Predeterminado |
+| ---: | :---: |
+| a-estrella | False |
+| debug | Fabiolse |
+
+
+**Argumentos Genetico**
+
+| Parametro | Valor valido | Predeterminado |
+| ---: | :--- | :---: |
+| individuos | número entero mayor a 0 | 3 |
+| generaciones | número entero mayor a 0 | 1000 |
+| taza-mutacion | punto flotante mayor a 0 | 0.5 |
+| politica | string: gen/row | gen |
+
+| Bandera | Predeterminado |
+| ---: | :---: |
+| genetico | False |
+| derecha | False |
+| izquierda | False |
+| abajo | False |
+| arriba | False |
+| ---: | :--- | :---: |
+| debug | False |
+| show-graphic | False |
+| guardar-archivos | True |
+
+**Estructura de codigo**
+
+Para ejecutar el predictor de votaciones se debe utilizar la siguiente estructura en cualquier programa de python:
+```python
+# importar el modulo
+from tec.ic.ia.pc2 import g08
+# ejecutar el algoritmo
+g08.main()
+```
+
+**Ejemplo**
+
+Considerando que un archivo python `ejemplo.py` tenga la estructura anterior y que lo que queremos es correr un algoritmo A\*:
+
+```bash
+python ejemplo.py --tablero-inicial entrada.txt --a-estrella --vision 5 --zanahorias 2
+```
+
+Considerando que un archivo python `ejemplo.py` tenga la estructura anterior y que lo que queremos es correr un algoritmo genetico:
+
+```bash
+python ejemplo.py --tablero-inicial entrada.txt --genetico --derecha --individuos 3 --generaciones 1000
+```
+Tambien se puede especificar la taza de mutacion y la politica de cruces:
+```bash
+python ejemplo.py --tablero-inicial entrada.txt --genetico --derecha --individuos 3 --generaciones 1000 --taza-mutacion 0.4 --politica gen
+```
+
 
 ## Archivos de entrada 
 
