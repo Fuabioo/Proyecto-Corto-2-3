@@ -574,7 +574,16 @@ Z  Z  Z
 A diferencia de la politica por filas, esta llega a una convergencia muchisimo mas rapida que el anterior pero esta genero un resulta mas ineficiente que el anterior, ya que la mejor aptutid fue muchisimo mas baja
 
 
-## Analisis General
+# Analisis sobre politicas de cruce
+
+## Politica de filas/columnas
+
+Esta politica toma aleatoriamente un porcentaje de filas de un individuo padre y el restante de un individuo madre, de manera que los hijos tienen una herencia mas fuerte de los padres, ya que esta toma algo similar a fragmentos de ADN, lo cual hace que los rasgos de sus padres prevalezcan. Esta funcion genera una convergencia lenta, pero por lo general preseta aptitudes mas altas y es considerablemente mas rapida, esto ultimo puede deberse a efectos de implementacion.
+
+## Politica de genes
+
+Esta politica toma aleatoriamente genes de su padre o madre, lo cual puede hacer que sis hijos difieran de sus padres directos y genera una mayor variabilidad a corto plazo de los individuos. Esta funcion genera una convergencia mas rapida que la anterior, pero sus aptitudes son mas bajas, esto puede ser por efectos de implementacion, ademas tiene una complejidad computacion mas alta.
+
 
 # Apéndice
 
