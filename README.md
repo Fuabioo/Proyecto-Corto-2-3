@@ -217,13 +217,49 @@ Duracion: 0 h:00 m:00.02 s
 
 ## Analisis
 
-En base al ejemplo anterior, podemos hacer varias pruebas sobre el algoritmo:
+En base al ejemplo anterior, podemos hacer varias pruebas sobre el algoritmo. Para efectos de pruebas definimos un limite predeterminado de 200 pasos, luego de esta cantidad de pasos el algoritmo se detiene incluso si si no se han consumido las zanahorias requeridas. Notese que esto no quiere decir que no haya solucion, mas bien es una decision basada en eficiencia, por lo que se dejo el limite como un parametro mas que se le puede pasar al programa por la consola de comandos.
+
+### Ejecucion 1
+
+Se realizo una corrida al algoritmo con un tablero de 25x25 con 50 zanahorias en total, con 10 zanahorias para satisfacer la necesidad del conejo.
 
 ![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_5.png)
+
+Tal y como se aprecia en la figura, ninguna corrida con los campos de vision alcanzo el limite de pasos.
+
+### Ejecucion 2
+
+Se realizo una corrida al algoritmo con un tablero de 25x25 con 100 zanahorias en total, con 10 zanahorias para satisfacer la necesidad del conejo.
+
 ![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_6.png)
+
+Tal y como se aprecia en la figura, en esta figura tampoco se alcanzo el limite de pasos, se obtuvo siempre la misma cantidad de pasos independientemente de la vision.
+
+### Ejecucion 3
+
+Se realizo una corrida al algoritmo con un tablero de 50x50 con 50 zanahorias en total, con 10 zanahorias para satisfacer la necesidad del conejo.
+
 ![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_7.png)
+
+Se aprecia con facilidad que al ser solamente 50 zanahorias para un espacio de area igual a 2500, se reduce tanto la probabilidad de ver una zanahoria que entre menos vision es mas posible enciclarse buscando.
+
+### Ejecucion 4
+
+Se realizo una corrida al algoritmo con un tablero de 50x50 con 100 zanahorias en total, con 10 zanahorias para satisfacer la necesidad del conejo.
+
 ![alt text](https://github.com/Fuabioo/Proyecto-Corto-2-3/blob/master/addons/Figure_8.png)
 
+Este caso se asemeja demasiado al anterior, en el sentido de que refleja aun mas el problema de tener zanahorias insuficientemente concentradas y cercanas al conejo. Debido a esto se entra eventualmente en un ciclo infinito.
+
+### Resultados generales
+
+Por lo visto el algoritmo empieza a tener problemas cuando todo el rango de vision es limpiado de zanahorias, por lo que en lo que al conejo respecta, cualquier campo es igual de incierto, haciendolo caer en un ciclo infinito solo terminado por el limite definido.
+
+Como era de esperarse, cada vez que se aumenta el campo de vision la duracion del algorimo aumenta significativamente, por lo que entramos en el dilema "sacrifico tiempo en procesamiento para alcanzar un mayor alcance o sacrifico la completitud para ahorrar tiempo y procesamiento". La linea entre ambas posibilidades es muy clara en todas las ejecuciones presentadas, la linea color rojo resulta ser la mas balanceada en este aspecto. Lo que nos lleva a concluir que para este caso en particular del conejo comiendo zanahorias el valor mas justo para la vision del conejo es 15.
+
+El problema base que se nota en las ejecuciones es que entre mas grande el tablero, mas zanahorias debe tener para evitar perder de vista zanahorias. Esta consideracion va mas orientada hacia el archivo de entrada que al algoritmo en si. Por lo tanto se debe considerar siempre si se desea garantizar completitud del problema evitar casos que lleven a este tipo de ciclos de incertidumbre.
+
+En general, la completitud del problema se ve siempre determinada por la ubicacion de las zanahorias y la posicion inicial del conejo, ademas de si el camino de zanahorias lleva a un dead end, lo cual nos lleva a concluir que no se puede garantizar siempre la completitud de un algoritmo A* con un campo de vision.
 
 # Algoritmo Genetico
 
