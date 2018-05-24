@@ -860,3 +860,7 @@ Los archivos de entrada pueden ser un tablero cuadrado o rectangular, con los si
 | `Z` | Indica posicion de zanahoria |
 | Espacio en blanco | Posicion vacia en el tablero |
 | `\n` | Indica el final de una fila |
+
+## Repositorio de proyectos anteriores
+
+[Proyecto Prediccion de Votos](https://github.com/Fuabioo/Proyecto-1---Predicci-n-Votaciones)
