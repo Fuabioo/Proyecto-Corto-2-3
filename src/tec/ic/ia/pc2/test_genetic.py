@@ -13,7 +13,7 @@ def get_two_carrot_input():
     args.genetico = True
     args.derecha = True
     args.individuos = 3
-    args.generaciones = 1000
+    args.generaciones = 100
     args.vision = 4
     args.zanahorias = 2
     args.tablero_inicial = "_generated_inputs_/4x4(2).txt"
@@ -29,7 +29,7 @@ def get_one_carrot_input():
     args.genetico = True
     args.derecha = True
     args.individuos = 3
-    args.generaciones = 1000
+    args.generaciones = 100
     args.vision = 4
     args.zanahorias = 2
     args.tablero_inicial = "_generated_inputs_/4x4(1).txt"
@@ -45,13 +45,20 @@ class TestCompletness(object):
         Two present carrots and bunny needs two carrots
         """
         result = get_two_carrot_input()
-        print(result.run())
-        assert result.args.zanahorias == 0
+        individual_1 = [['>','C',' ','<'],
+                     [' ','Z',' ',' '],
+                     [' ',' ',' ',' '],
+                     [' ',' ','Z',' ']]
+        individual_2 = [[' ','C',' ','<'],
+                     [' ','Z',' ',' '],
+                     [' ',' ',' ',' '],
+                     [' ',' ','Z',' ']]
+        assert 5 == result.compare(individual_1, individual_2)
 
     def test_completeness_two(self):
         """
         One present carrots but bunny needs two
         """
-        result = get_one_carrot_input()
-        result.run()
-        assert result.args.zanahorias > 0
+        result = get_two_carrot_input()
+        res = result.run()
+        assert res[-1] > 10000

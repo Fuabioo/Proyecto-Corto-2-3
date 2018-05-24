@@ -107,7 +107,7 @@ class Genetic:
         print("Duracion:", hms_string(time.time() - start))
         if self.print_result:
             print_graph(scores)
-        return scores
+        return copy.deepcopy(scores)
 
     def generate_first_population(self, size_of_population):
         """

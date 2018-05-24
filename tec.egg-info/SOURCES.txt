@@ -25,6 +25,7 @@ src/tec/ic/ia/pc2/g08.py
 src/tec/ic/ia/pc2/genetic _old.py
 src/tec/ic/ia/pc2/genetic.py
 src/tec/ic/ia/pc2/test_astar.py
+src/tec/ic/ia/pc2/test_genetic.py
 src/tec/ic/ia/pc2/test_input.py
 src/tec/ic/ia/pc2/utils.py
 tec.egg-info/PKG-INFO
