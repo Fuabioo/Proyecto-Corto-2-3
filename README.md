@@ -483,7 +483,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa y luego de 
 - política de cruce = "Columnas"
 
 
-### Parámetros de evolucion:
+### Parámetros de evolución:
 - Premio de completitud = 10000
 - Premio por zanahoria = 50
 - Pena por movimiento = 1
@@ -582,7 +582,7 @@ Se corre un ejemplo con los siguientes parametros
 - politica de cruce = "Genes"
 
 
-### Parámetros de evolucion:
+### Parámetros de evolución:
 - Premio de completitud = 10000
 - Premio por zanahoria = 50
 - Pena por movimiento = 1
@@ -645,7 +645,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa en esta oca
 - política de cruce = "Columnas"
 
 
-### Parámetros de evolucion:
+### Parámetros de evolución:
 - Premio de completitud = 10000
 - Premio por zanahoria = 50
 - Pena por movimiento = 1
