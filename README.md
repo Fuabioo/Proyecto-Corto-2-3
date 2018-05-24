@@ -32,7 +32,7 @@ Proyecto Corto 2 y 3 - Conejo y Zanahorias
 
 # Contexto del problema
 
-Se tiene un conejo que debe comer cierta cantidad de zanahorias en un tablero de dimensiones NxM. En el siguiente trabajo se trabajan dos acercamientos que se le pueden dar al problema de buscar y comer las zanahorias:
+Se tiene un conejo que debe comer cierta cantidad de zanahorias en un tablero de dimensiones NxM. En el siguiente proyecto se trabajan dos acercamientos que se le pueden dar al problema de buscar y comer las zanahorias:
 
 + Un algoritmo A* en el que el conejo se mueve un paso a la vez.
 + Un algoritmo Genético en el que el conejo se mueve indefinidamente hacia una direccion que puede cambiar si se topa un "direccionador".
