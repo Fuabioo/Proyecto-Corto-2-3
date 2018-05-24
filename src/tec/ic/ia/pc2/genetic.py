@@ -107,6 +107,7 @@ class Genetic:
         print("Duracion:", hms_string(time.time() - start))
         if self.print_result:
             print_graph(scores)
+        return scores
 
     def generate_first_population(self, size_of_population):
         """
@@ -238,6 +239,9 @@ class Genetic:
         return kids
 
     def mute(self, to_mute):
+        """
+        Mutates and individual
+        """
         gens = ["<", ">", "^", "v", " "]
         directions = []
         for person in to_mute:
