@@ -2,7 +2,7 @@
 Testing module
 """
 import pytest
-import tec.ic.ia.pc2.g08
+import tec.ic.ia.pc2.g08 as g08
 
 
 def get_rectangle_input():
@@ -13,7 +13,7 @@ def get_rectangle_input():
     args.a_estrella = True
     args.vision = 2
     args.zanahorias = 2
-    args.tablero_inicial = "5x4.txt"
+    args.tablero_inicial = "_generated_inputs_/5x4.txt"
     result = g08.get_result(algorithm="AStar", args=args)
     return result
 
@@ -26,7 +26,7 @@ def get_two_carrot_input():
     args.a_estrella = True
     args.vision = 2
     args.zanahorias = 2
-    args.tablero_inicial = "5x4.txt"
+    args.tablero_inicial = "_generated_inputs_/5x4.txt"
     result = g08.get_result(algorithm="AStar", args=args)
     return result
 
@@ -39,7 +39,7 @@ def get_one_carrot_input():
     args.a_estrella = True
     args.vision = 2
     args.zanahorias = 2
-    args.tablero_inicial = "4x4(1).txt"
+    args.tablero_inicial = "_generated_inputs_/4x4(1).txt"
     result = g08.get_result(algorithm="AStar", args=args)
     return result
 
@@ -52,7 +52,7 @@ def get_25_by_25_input():
     args.a_estrella = True
     args.vision = 10
     args.zanahorias = 10
-    args.tablero_inicial = "25x25(16).txt"
+    args.tablero_inicial = "_generated_inputs_/25x25(50).txt"
     result = g08.get_result(algorithm="AStar", args=args)
     return result
 
@@ -82,7 +82,7 @@ class TestCompletness(object):
         """
         result = get_25_by_25_input()
         result.run()
-        assert result.args.zanahorias > 0
+        assert result.args.zanahorias == 0
 
 
 class TestEnviroment(object):
