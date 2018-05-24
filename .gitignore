@@ -1,6 +1,5 @@
 Output/
 .pytest_cache/
-_generated_inputs_/
 __pycache__
 data_gathering_astar.py
 dist/
