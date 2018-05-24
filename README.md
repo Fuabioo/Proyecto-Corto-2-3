@@ -310,7 +310,7 @@ Duracion: 0 h:00 m:00.02 s
 
 En base al ejemplo anterior, podemos hacer varias pruebas sobre el algoritmo. Para efectos de pruebas definimos un limite predeterminado de 200 pasos, luego de esta cantidad de pasos el algoritmo se detiene incluso si si no se han consumido las zanahorias requeridas. Notese que esto no quiere decir que no haya solución, mas bien es una decision basada en eficiencia, por lo que se dejo el limite como un parametro mas que se le puede pasar al programa por la consola de comandos.
 
-### Ejecucion 1
+### Ejecución 1
 
 Se realizo una corrida al algoritmo con un tablero de 25x25 con 50 zanahorias en total, con 10 zanahorias para satisfacer la necesidad del conejo.
 
@@ -318,7 +318,7 @@ Se realizo una corrida al algoritmo con un tablero de 25x25 con 50 zanahorias en
 
 Tal y como se aprecia en la figura, ninguna corrida con los campos de vision alcanzo el limite de pasos.
 
-### Ejecucion 2
+### Ejecución 2
 
 Se realizo una corrida al algoritmo con un tablero de 25x25 con 100 zanahorias en total, con 10 zanahorias para satisfacer la necesidad del conejo.
 
@@ -326,7 +326,7 @@ Se realizo una corrida al algoritmo con un tablero de 25x25 con 100 zanahorias e
 
 Tal y como se aprecia en la figura, en esta figura tampoco se alcanzo el limite de pasos, se obtuvo siempre la misma cantidad de pasos independientemente de la vision.
 
-### Ejecucion 3
+### Ejecución 3
 
 Se realizo una corrida al algoritmo con un tablero de 50x50 con 50 zanahorias en total, con 10 zanahorias para satisfacer la necesidad del conejo.
 
@@ -334,7 +334,7 @@ Se realizo una corrida al algoritmo con un tablero de 50x50 con 50 zanahorias en
 
 Se aprecia con facilidad que al ser solamente 50 zanahorias para un espacio de area igual a 2500, se reduce tanto la probabilidad de ver una zanahoria que entre menos vision es mas posible enciclarse buscando.
 
-### Ejecucion 4
+### Ejecución 4
 
 Se realizo una corrida al algoritmo con un tablero de 50x50 con 100 zanahorias en total, con 10 zanahorias para satisfacer la necesidad del conejo.
 
@@ -412,7 +412,7 @@ Para el proyecto se toma la primera interpretación meramente como una decisión
 ## Ejemplo 1
 Se corre un ejemplo con los siguientes parámetros
 
-### Parametros:
+### Parámetros:
 - dirección inicial = derecha
 - individuos = 20
 - generaciones = 100
@@ -475,7 +475,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa y luego de 
 
 ## Ejemplo 2
 
-### Parametros:
+### Parámetros:
 - dirección inicial = derecha
 - individuos = 20
 - generaciones = 1000
@@ -483,7 +483,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa y luego de 
 - política de cruce = "Columnas"
 
 
-### Parametros de evolucion:
+### Parámetros de evolucion:
 - Premio de completitud = 10000
 - Premio por zanahoria = 50
 - Pena por movimiento = 1
@@ -574,7 +574,7 @@ Pese a que dados estos parametros y entradas no se llega a dar una completitud e
 ## Ejemplo 3
 Se corre un ejemplo con los siguientes parametros
 
-### Parametros:
+### Parámetros:
 - direccion inical = derecha
 - individuos = 20
 - generaciones = 1000
@@ -582,7 +582,7 @@ Se corre un ejemplo con los siguientes parametros
 - politica de cruce = "Genes"
 
 
-### Parametros de evolucion:
+### Parámetros de evolucion:
 - Premio de completitud = 10000
 - Premio por zanahoria = 50
 - Pena por movimiento = 1
@@ -637,7 +637,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa en esta oca
 
 ## Ejemplo 4
 
-### Parametros:
+### Parámetros:
 - direccion inical = derecha
 - individuos = 20
 - generaciones = 1000
@@ -645,7 +645,7 @@ Como se puede apreciar el algoritmo encuentra una solución completa en esta oca
 - política de cruce = "Columnas"
 
 
-### Parametros de evolucion:
+### Parámetros de evolucion:
 - Premio de completitud = 10000
 - Premio por zanahoria = 50
 - Pena por movimiento = 1
